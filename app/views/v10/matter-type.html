@@ -1,0 +1,328 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">Client and case details</span>
+      <h1 class="govuk-heading-l">What's the matter about?</h1>
+
+      <p class="govuk-hint">Choose the most significant legal issue being dealt with during the case.</p>
+      
+      <form method="post" action="./matter-type-2">
+
+
+        {% if (data['setup-category'] == "Public law") %}
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="matter-type" name="matter-type" type="radio" value="Ultra vires act/failure to act by Public Body">
+                <label class="govuk-label govuk-radios__label" for="matter-type">
+                  Ultra vires act/failure to act by Public Body
+                </label>
+                <div id="matter-type-hint" class="govuk-hint govuk-radios__hint">
+                  Code: BPBA
+                </div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="matter-type-2" name="matter-type" type="radio" value="Unlawful exercise of discretion">
+                <label class="govuk-label govuk-radios__label" for="matter-type-2">
+                  Unlawful exercise of discretion 
+                </label>
+                <div id="matter-type-2-hint" class="govuk-hint govuk-radios__hint">
+                  Code: BEOD
+                </div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="matter-type-3" name="matter-type" type="radio" value="Claim based on procedural unfairness">
+                <label class="govuk-label govuk-radios__label" for="matter-type-3">
+                  Claim based on procedural unfairness
+                </label>
+                <div id="matter-type-3-hint" class="govuk-hint govuk-radios__hint">
+                  Code: BPRO
+                </div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="matter-type-4" name="matter-type" type="radio" value="Discrimination">
+                <label class="govuk-label govuk-radios__label" for="matter-type-4">
+                  Discrimination
+                </label>
+                <div id="matter-type-4-hint" class="govuk-hint govuk-radios__hint">
+                  Code: BDIS
+                </div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="matter-type-5" name="matter-type" type="radio" value="HRA claim">
+                <label class="govuk-label govuk-radios__label" for="matter-type-5">
+                  HRA claim
+                </label>
+                <div id="matter-type-5-hint" class="govuk-hint govuk-radios__hint">
+                  Code: BHRA
+                </div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="matter-type-6" name="matter-type" type="radio" value="Maladministration">
+                <label class="govuk-label govuk-radios__label" for="matter-type-6">
+                  Maladministration
+                </label>
+                <div id="matter-type-6-hint" class="govuk-hint govuk-radios__hint">
+                  Code: BMAL
+                </div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="matter-type-7" name="matter-type" type="radio" value="Application of regulatory or disciplinary procedure">
+                <label class="govuk-label govuk-radios__label" for="matter-type-7">
+                  Application of regulatory or disciplinary procedure
+                </label>
+                <div id="matter-type-7-hint" class="govuk-hint govuk-radios__hint">
+                  Code: BRDP
+                </div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="matter-type-8" name="matter-type" type="radio" value="Other">
+                <label class="govuk-label govuk-radios__label" for="matter-type-8">
+                  Other
+                </label>
+                <div id="matter-type-8-hint" class="govuk-hint govuk-radios__hint">
+                  Code: BOTH
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        {% else %}
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="matter-type-1" name="matter-type" type="radio" value="Divorce/Judicial Separation/Nullity">
+                <label class="govuk-label govuk-radios__label" for="matter-type-1">
+                  Divorce/Judicial Separation/Nullity
+                </label>
+                <div id="matter-type-1-hint" class="govuk-hint govuk-radios__hint">
+                  Code: FAMA
+                </div>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="matter-type-2" name="matter-type" type="radio" value="Dissolution of Civil Partnership">
+                <label class="govuk-label govuk-radios__label" for="matter-type-2">
+                  Dissolution of Civil Partnership
+                </label>
+                <div id="matter-type-2-hint" class="govuk-hint govuk-radios__hint">
+                  Code: FAMB
+                </div>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="matter-type-3" name="matter-type" type="radio" value="Domestic Abuse">
+                <label class="govuk-label govuk-radios__label" for="matter-type-3">
+                  Domestic Abuse
+                </label>
+                <div id="matter-type-3-hint" class="govuk-hint govuk-radios__hint">
+                  Code: FAMC
+                </div>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="matter-type-4" name="matter-type" type="radio" value="Private Law Children only">
+                <label class="govuk-label govuk-radios__label" for="matter-type-4">
+                  Private Law Children only
+                </label>
+                <div id="matter-type-4-hint" class="govuk-hint govuk-radios__hint">
+                  Code: FAMD
+                </div>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="matter-type-5" name="matter-type" type="radio" value="Private Law Children and Financial Provision">
+                <label class="govuk-label govuk-radios__label" for="matter-type-5">
+                  Private Law Children and Financial Provision
+                </label>
+                <div id="matter-type-5-hint" class="govuk-hint govuk-radios__hint">
+                  Code: FAME
+                </div>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="matter-type-6" name="matter-type" type="radio" value="Private Law Children and Divorce/Judicial Separation/Nullity">
+                <label class="govuk-label govuk-radios__label" for="matter-type-6">
+                  Private Law Children and Divorce/Judicial Separation/Nullity
+                </label>
+                <div id="matter-type-6-hint" class="govuk-hint govuk-radios__hint">
+                  Code: FAMF
+                </div>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="matter-type-7" name="matter-type" type="radio" value="Private Law Children and Civil Partnership Dissolution">
+                <label class="govuk-label govuk-radios__label" for="matter-type-7">
+                  Private Law Children and Civil Partnership Dissolution
+                </label>
+                <div id="matter-type-7-hint" class="govuk-hint govuk-radios__hint">
+                  Code: FAMG
+                </div>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="matter-type-8" name="matter-type" type="radio" value="Private Law Children and Domestic Abuse">
+                <label class="govuk-label govuk-radios__label" for="matter-type-8">
+                  Private Law Children and Domestic Abuse
+                </label>
+                <div id="matter-type-8-hint" class="govuk-hint govuk-radios__hint">
+                  Code: FAMH
+                </div>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="matter-type-9" name="matter-type" type="radio" value="Private Law Children, Domestic Abuse and Divorce/Judicial Separation/Nullity">
+                <label class="govuk-label govuk-radios__label" for="matter-type-9">
+                  Private Law Children, Domestic Abuse and Divorce/Judicial Separation/Nullity
+                </label>
+                <div id="matter-type-9-hint" class="govuk-hint govuk-radios__hint">
+                  Code: FAMI
+                </div>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="matter-type-10" name="matter-type" type="radio" value="Private Law Children, Domestic Abuse and Civil Partnership Dissolution">
+                <label class="govuk-label govuk-radios__label" for="matter-type-10">
+                  Private Law Children, Domestic Abuse and Civil Partnership Dissolution
+                </label>
+                <div id="matter-type-10-hint" class="govuk-hint govuk-radios__hint">
+                  Code: FAMJ
+                </div>
+              </div>
+
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="matter-type-11" name="matter-type" type="radio" value="Other">
+                <label class="govuk-label govuk-radios__label" for="matter-type-11">
+                  Other
+                </label>
+                <div id="matter-type-11-hint" class="govuk-hint govuk-radios__hint">
+                  Code: FAMV
+                </div>
+              </div>
+
+              <!-- <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="matter-type-11" name="matter-type" type="radio" value="Financial Provision Only">
+                <label class="govuk-label govuk-radios__label" for="matter-type-11">
+                  Financial Provision Only
+                </label>
+                <div id="matter-type-11-hint" class="govuk-hint govuk-radios__hint">
+                  Code: FAMK
+                </div>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="matter-type-12" name="matter-type" type="radio" value="Financial Provision and Divorce/Judicial Separation/Nullity">
+                <label class="govuk-label govuk-radios__label" for="matter-type-12">
+                  Financial Provision and Divorce/Judicial Separation/Nullity
+                </label>
+                <div id="matter-type-12-hint" class="govuk-hint govuk-radios__hint">
+                  Code: FAML
+                </div>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="matter-type-13" name="matter-type" type="radio" value="Financial Provision and Civil Partnership Dissolution">
+                <label class="govuk-label govuk-radios__label" for="matter-type-13">
+                  Financial Provision and Civil Partnership Dissolution
+                </label>
+                <div id="matter-type-13-hint" class="govuk-hint govuk-radios__hint">
+                  Code: FAMM
+                </div>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="matter-type-14" name="matter-type" type="radio" value="Financial Provision and Domestic Abuse">
+                <label class="govuk-label govuk-radios__label" for="matter-type-14">
+                  Financial Provision and Domestic Abuse
+                </label>
+                <div id="matter-type-14-hint" class="govuk-hint govuk-radios__hint">
+                  Code: FAMN
+                </div>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="matter-type-15" name="matter-type" type="radio" value="Financial Provision, Domestic Abuse and Divorce/Judicial Separation/Nullity">
+                <label class="govuk-label govuk-radios__label" for="matter-type-15">
+                  Financial Provision, Domestic Abuse and Divorce/Judicial Separation/Nullity
+                </label>
+                <div id="matter-type-15-hint" class="govuk-hint govuk-radios__hint">
+                  Code: FAMO
+                </div>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="matter-type-16" name="matter-type" type="radio" value="Financial Provision, Domestic Abuse and Civil Partnership Dissolution">
+                <label class="govuk-label govuk-radios__label" for="matter-type-16">
+                  Financial Provision, Domestic Abuse and Civil Partnership Dissolution
+                </label>
+                <div id="matter-type-16-hint" class="govuk-hint govuk-radios__hint">
+                  Code: FAMP
+                </div>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="matter-type-17" name="matter-type" type="radio" value="Financial Provision, Private Law Children and Domestic Abuse">
+                <label class="govuk-label govuk-radios__label" for="matter-type-17">
+                  Financial Provision, Private Law Children and Domestic Abuse
+                </label>
+                <div id="matter-type-17-hint" class="govuk-hint govuk-radios__hint">
+                  Code: FAMQ
+                </div>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="matter-type-18" name="matter-type" type="radio" value="Financial Provision, Private Law Children, Domestic Abuse and Divorce/Judicial Separation/Nullity">
+                <label class="govuk-label govuk-radios__label" for="matter-type-18">
+                  Financial Provision, Private Law Children, Domestic Abuse and Divorce/Judicial Separation/Nullity
+                </label>
+                <div id="matter-type-18-hint" class="govuk-hint govuk-radios__hint">
+                  Code: FAMR
+                </div>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="matter-type-19" name="matter-type" type="radio" value="Financial Provision, Private Law Children, Domestic Abuse and Civil Partnership Dissolution">
+                <label class="govuk-label govuk-radios__label" for="matter-type-19">
+                  Financial Provision, Private Law Children, Domestic Abuse and Civil Partnership Dissolution
+                </label>
+                <div id="matter-type-19-hint" class="govuk-hint govuk-radios__hint">
+                  Code: FAMS
+                </div>
+              </div> -->
+          </fieldset>
+        </div>
+
+
+        {% endif %}
+
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

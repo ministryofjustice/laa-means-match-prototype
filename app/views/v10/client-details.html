@@ -1,0 +1,117 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">Client and case details</span>
+      <h1 class="govuk-heading-l">Your client's details</h1>
+
+      <form method="post" action="./nino">
+
+        <!-- Name -->
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--m" for="name">
+            Full name
+          </label>
+          <input class="govuk-input" id="name" name="name" type="text" aria-describedby="name-hint">
+        </div>
+
+        <!-- Name changed since birth? -->
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              Has their last name changed since birth?
+            </legend>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="name-change-yes" name="name-change" type="radio" data-aria-controls="conditional-name-change">
+                <label class="govuk-label govuk-radios__label" for="name-change-yes">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-name-change">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="name-change">
+                    Current last name
+                  </label>
+                  <input class="govuk-input govuk-!-width-one-third" id="name-change-newName" name="name-change">
+                </div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="name-change-no" name="name-change" type="radio" value="No">
+                <label class="govuk-label govuk-radios__label" for="name-change-no">
+                  No
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <!-- DOB -->
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" role="group" aria-describedby="dob-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              Date of birth
+            </legend>
+            <div id="expiry-hint" class="govuk-hint">
+              For example, 31 3 1980
+            </div>
+            <div class="govuk-date-input" id="dob">
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="dob-day">
+                    Day
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day" name="dob-day" type="text" inputmode="numeric">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="dob-month">
+                    Month
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-month" name="dob-month" type="text" inputmode="numeric">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="dob-year">
+                    Year
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year" name="dob-year" type="text" inputmode="numeric">
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <!-- Place of birth -->
+        <!-- <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--m" for="place-of-birth">
+            Place of birth (town)
+          </label>
+          <input class="govuk-input govuk-input--width-20" id="place-of-birth" name="place-of-birth" type="text" aria-describedby="nplace-of-birth-hint">
+        </div> -->
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

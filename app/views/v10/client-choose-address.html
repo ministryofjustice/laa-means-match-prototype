@@ -1,0 +1,85 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">Client and case details</span>
+      <h1 class="govuk-heading-l">Choose your client’s address</h1>
+
+      <p><a href="./client-find-address-manual" class="govuk-link">Enter the address manually</a></p>
+
+      
+      <form method="post" action="./means-required">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="client-address" name="client-address" type="radio" value="12 Elm Grove, Whitchurch, Bristol, BS14 9AA">
+                <label class="govuk-label govuk-radios__label" for="client-address">
+                  12 Elm Grove, Whitchurch, Bristol, BS14 9AA
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="client-address-2" name="client-address" type="radio" value="13 Elm Grove, Whitchurch, Bristol, BS14 9AA">
+                <label class="govuk-label govuk-radios__label" for="client-address-2">
+                  13 Elm Grove, Whitchurch, Bristol, BS14 9AA
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="client-address-3" name="client-address" type="radio" value="14 Elm Grove, Whitchurch, Bristol, BS14 9AA">
+                <label class="govuk-label govuk-radios__label" for="client-address-3">
+                  14 Elm Grove, Whitchurch, Bristol, BS14 9AA
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="client-address-4" name="client-address" type="radio" value="15 Elm Grove, Whitchurch, Bristol, BS14 9AA">
+                <label class="govuk-label govuk-radios__label" for="client-address-4">
+                  15 Elm Grove, Whitchurch, Bristol, BS14 9AA
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="client-address" name="client-address" type="radio" value="21 Elm Grove, Whitchurch, Bristol, BS14 9AA">
+                <label class="govuk-label govuk-radios__label" for="client-address">
+                  21 Elm Grove, Whitchurch, Bristol, BS14 9AA
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="client-address-3" name="client-address" type="radio" value="Rose Cottage, Birch Lane, Whitchurch, Bristol, BS14 9AA">
+                <label class="govuk-label govuk-radios__label" for="client-address-3">
+                  Rose Cottage, Birch Lane, Whitchurch, Bristol, BS14 9AA
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="client-address-4" name="client-address" type="radio" value="The Old School House, Pine Street, Whitchurch, Bristol, BS14 9AA">
+                <label class="govuk-label govuk-radios__label" for="client-address-4">
+                  The Old School House, Pine Street, Whitchurch, Bristol, BS14 9AA
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

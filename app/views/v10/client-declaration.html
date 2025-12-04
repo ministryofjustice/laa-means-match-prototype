@@ -1,0 +1,76 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">Client declaration</span>
+      <h1 class="govuk-heading-l">
+        Confirm the following
+      </h1>
+
+      <p>Joe Bloggs agrees that:</p>
+
+      <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+        <li>they’ve instructed me, the provider, to act on their behalf</li>
+        <li>they’ve read the <a class="govuk-link" href="#">privacy policy (opens in a new window or tab)</a></li>
+        <li>the information they’ve given is complete and correct</li>
+        <li>they’ll report any changes to their financial situation immediately
+        </ul>
+
+      <div class="govuk-warning-text govuk-!-margin-bottom-2">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-visually-hidden">Warning</span>
+          <p class="govuk-!-font-weight-bold govuk-!-margin-bottom-1">If they give wrong or incomplete information, do not report changes or are found to have committed benefit fraud, they may:</p>
+          <ul class="govuk-list govuk-list--bullet govuk-!-font-weight-bold">
+            <li>be prosecuted</li>
+            <li>need to pay a financial penalty</li>
+            <li>have their legal aid stopped and have to pay back the costs</li>
+          </ul>
+        </strong>
+      </div>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="declaration-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h1 class="govuk-fieldset__heading">
+              Declaration
+            </h1>
+          </legend>
+            <p>The date your client signs the declaration is your case start date and the date you can bill from.</p>
+            <p><a class="govuk-link" href="#">Download a declaration for your client to sign</a></p>
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+              <label class="govuk-label govuk-checkboxes__label" for="waste">
+                I confirm the above is correct and that I have a signed declaration from my client
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <form method="post">
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+      </form>
+      
+
+    </div>
+  </div>
+
+{% endblock %}

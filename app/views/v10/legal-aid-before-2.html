@@ -1,0 +1,64 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <form method="post" action="./legal-aid-id">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <span class="govuk-caption-l">Client and case details</span>
+              <h1 class="govuk-fieldset__heading">
+                 Did your client get legal help for this matter in the last 6 months?
+              </h1>
+            </legend>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="within-6-months-yes" name="within-6-months" type="radio" value="Yes" data-aria-controls="conditional-within-6-months-yes">
+                <label class="govuk-label govuk-radios__label" for="within-6-months-yes">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-within-6-months-yes">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="within-6-months-reason">
+                    Explain the reason for creating a new case for the same matter
+                  </label>
+                  <textarea class="govuk-textarea" id="within-6-months-reason" name="within-6-months" rows="5" aria-describedby="within-6-months-reason-hint"></textarea>
+                </div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="lwithin-6-months-no" name="within-6-months" type="radio" value="No">
+                <label class="govuk-label govuk-radios__label" for="within-6-months-no">
+                  No
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

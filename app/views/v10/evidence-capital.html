@@ -1,0 +1,102 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">Evidence</span>
+      <h1 class="govuk-heading-l">Evidence of your client’s expenditure and capital</h1>
+
+      <p class="govuk-body">You only need to gather evidence of your client's expenditure and capital if they are close to the threshold and there is a risk of them being ineligible. <a href="#">Read the risk-based evidence guidelines for more information</a>.</p>
+      
+      <form method="post">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="employment-income-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h2 class="govuk-fieldset__heading">
+              Housing costs
+            </h2>
+          </legend>
+          <div id="waste-hint" class="govuk-hint">
+            Select all that apply
+          </div>
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="housing-1" name="housing" type="checkbox" value="Bank statement">
+              <label class="govuk-label govuk-checkboxes__label" for="housing-1">
+                Bank statement
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="housing-2" name="housing" type="checkbox" value="Tenancy agreement">
+              <label class="govuk-label govuk-checkboxes__label" for="housing-2">
+                Tenancy agreement 
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="housing-3" name="housing" type="checkbox" value="No evidence required">
+              <label class="govuk-label govuk-checkboxes__label" for="housing-3">
+                No evidence required
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="other-income-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h2 class="govuk-fieldset__heading">
+              Capital
+            </h2>
+          </legend>
+          <div id="waste-hint" class="govuk-hint">
+            Select all that apply
+          </div>
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="capital-1" name="capital" type="checkbox" value="Bank statement">
+              <label class="govuk-label govuk-checkboxes__label" for="capital-1">
+                Bank statement
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="capital-2" name="capital" type="checkbox" value="Premium bonds statement">
+              <label class="govuk-label govuk-checkboxes__label" for="capital-2">
+                Premium bonds statement
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="capital-3" name="capital" type="checkbox" value="No evidence required">
+              <label class="govuk-label govuk-checkboxes__label" for="capital-3">
+                No evidence required
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

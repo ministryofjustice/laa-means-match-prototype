@@ -1,0 +1,98 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <form class="form" method="post" action="#">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <span class="govuk-caption-l">Client and case details</span>
+              <h1 class="govuk-fieldset__heading">
+                What type of non-means-tested work is it?
+              </h1>
+            </legend>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="nonmeans-1" name="nonmeans" type="radio" value="government-gateway" aria-describedby="nonmeans-item-hint">
+                <label class="govuk-label govuk-radios__label" for="nonmeans">
+                  Advice to an individual on International maintenance obligations
+                </label>
+                <div id="nonmeans-item-hint" class="govuk-hint govuk-radios__hint">
+                  Article 10 of hte 2007 Hague Convention or Article 56 of the EU Maintenance Regulation
+                </div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="nonmeans-2" name="nonmeans" type="radio" value="govuk-one-login" aria-describedby="nonmeans-2-item-hint">
+                <label class="govuk-label govuk-radios__label" for="nonmeans-2">
+                  Advice to an individual on International maintenance obligations
+                </label>
+                <div id="nonmeans-2-item-hint" class="govuk-hint govuk-radios__hint">
+                  Article 10 of hte 2007 Hague Convention or Article 56 of the EU Maintenance Regulation
+                </div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="nonmeans-3" name="nonmeans" type="radio" value="govuk-one-login" aria-describedby="nonmeans-3-item-hint">
+                <label class="govuk-label govuk-radios__label" for="nonmeans-3">
+                  Advice to an individual in connection or subject to a TPIM notice 
+                </label>
+                <div id="nonmeans-3-item-hint" class="govuk-hint govuk-radios__hint">
+                  Under Schedule 1, Terrorism Prevention and Investigation Measures Act
+                </div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="nonmeans-4" name="nonmeans" type="radio" value="govuk-one-login" aria-describedby="nonmeans-4-item-hint">
+                <label class="govuk-label govuk-radios__label" for="nonmeans-4">
+                  Advice to a carer making an appeal on behalf of a child or young person to the First Tier Tribunal (SEND) or the Education Tribunal for Wales 
+                </label>
+                <div id="nonmeans-4-item-hint" class="govuk-hint govuk-radios__hint">
+                  The carer must be a foster carer (current or former), or an approved prospective adopter, of a of a young person who lacks capacity and resides with the carer in a ‘staying put’ arrangement.
+                </div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="nonmeans-5" name="nonmeans" type="radio" value="Housing Loss Prevention Advice Service (HLPAS) " aria-describedby="nonmeans-5-item-hint">
+                <label class="govuk-label govuk-radios__label" for="nonmeans-5">
+                  Housing Loss Prevention Advice Service (HLPAS) 
+                </label>
+                <div id="nonmeans-5-item-hint" class="govuk-hint govuk-radios__hint">
+                  Early legal advice
+                </div>
+              </div> 
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="nonmeans-6" name="nonmeans" type="radio" value="Housing Loss Prevention Advice Service (HLPAS) " aria-describedby="nonmeans-6-item-hint">
+                <label class="govuk-label govuk-radios__label" for="nonmeans-6">
+                  Mental Health Tribunal 
+                </label>
+                <div id="nonmeans-6-item-hint" class="govuk-hint govuk-radios__hint">
+                  Representation or preparation for representation if eligible.
+                </div>
+              </div>                             
+            </div>
+          </fieldset>
+        </div>
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

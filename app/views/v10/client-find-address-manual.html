@@ -1,0 +1,64 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">Client and case details</span>
+      <h1 class="govuk-heading-l">Enter your client's home address</h1>
+
+      <form method="post" action="./means-required">
+
+        <!-- Postcode -->
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-line-1">
+            Address line 1
+          </label>
+          <input class="govuk-input govuk-input--width-20" id="address-line-1" name="address-line-1" type="text" aria-describedby="address-line-1-hint" value="{{ data['address-line-1'] }}">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-line-2">
+            Address line 2 (optional)
+          </label>
+          <input class="govuk-input govuk-input--width-20" id="address-line-2" name="address-line-2" type="text" aria-describedby="address-line-2-hint">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="town">
+            Town or city
+          </label>
+          <input class="govuk-input govuk-input--width-20" id="town" name="town" type="text" aria-describedby="town-hint">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="country">
+            Country
+          </label>
+          <input class="govuk-input govuk-input--width-20" id="country" name="country" type="text" aria-describedby="country-hint">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="postcode">
+            Postcode
+          </label>
+          <input class="govuk-input govuk-input--width-10" id="postcode" name="postcode" type="text" aria-describedby="postcode-hint" value="{{ data['postcode'] }}">
+        </div>
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

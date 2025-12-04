@@ -1,0 +1,127 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full width">
+
+      <h1 class="govuk-heading-l">
+        Record civil controlled work
+      </h1>
+
+      {{ govukButton({
+        text: "Record a new case",
+        href: "start-page"
+      }) }}
+
+      <nav class="moj-sub-navigation" aria-label="Sub navigation">
+        <ul class="moj-sub-navigation__list">
+          <li class="moj-sub-navigation__item">
+            <a class="moj-sub-navigation__link" aria-current="page" href="#">Recorded cases</a>
+          </li>
+          <li class="moj-sub-navigation__item">
+            <a class="moj-sub-navigation__link" href="#">In progress</a>
+          </li>
+        </ul>
+      </nav> 
+
+      <table class="govuk-table" data-module="moj-sortable-table">
+
+        <!-- <caption class="govuk-table__caption">Client Records</caption> -->
+
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header" aria-sort="none">Client name</th>
+            <th scope="col" class="govuk-table__header" aria-sort="none">Reference number</th>
+            <th scope="col" class="govuk-table__header" aria-sort="descending">Date recorded</th>
+          </tr>
+        </thead>
+
+        <tbody class="govuk-table__body">
+
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="#">Joe Bloggs</a></td>
+            <td class="govuk-table__cell">CW-101122</td>
+            <td class="govuk-table__cell" data-sort-value="2025.11.29">29 Nov 2025</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="#">Jamal Thompson</a></td>
+            <td class="govuk-table__cell">CW-102378</td>
+            <td class="govuk-table__cell" data-sort-value="2025.09.15">15 Sep 2025</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="#">Emily Zhang</a></td>
+            <td class="govuk-table__cell">CW-100842</td>
+            <td class="govuk-table__cell" data-sort-value="2025.10.01">01 Oct 2025</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="#">Mohammed Al-Farsi</a></td>
+            <td class="govuk-table__cell">CW-101765</td>
+            <td class="govuk-table__cell" data-sort-value="2025.08.29">29 Aug 2025</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="#">Grace O'Connell</a></td>
+            <td class="govuk-table__cell">CW-103212</td>
+            <td class="govuk-table__cell" data-sort-value="2025.09.30">30 Sep 2025</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="#">Rajesh Patel</a></td>
+            <td class="govuk-table__cell">CW-100329</td>
+            <td class="govuk-table__cell" data-sort-value="2025.07.12">12 Jul 2025</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="#">Chloe Martin</a></td>
+            <td class="govuk-table__cell">CW-104501</td>
+            <td class="govuk-table__cell" data-sort-value="2025.09.04">04 Sep 2025</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="#">Daniel Okafor</a></td>
+            <td class="govuk-table__cell">CW-100998</td>
+            <td class="govuk-table__cell" data-sort-value="2025.10.01">01 Oct 2025</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="#">Hannah Müller</a></td>
+            <td class="govuk-table__cell">CW-102119</td>
+            <td class="govuk-table__cell" data-sort-value="2025.08.21">21 Aug 2025</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="#">Youssef Nader</a></td>
+            <td class="govuk-table__cell">CW-105678</td>
+            <td class="govuk-table__cell" data-sort-value="2025.09.26">26 Sep 2025</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="#">Sofia Rossi</a></td>
+            <td class="govuk-table__cell">CW-101342</td>
+            <td class="govuk-table__cell" data-sort-value="2025.06.18">18 Jun 2025</td>
+          </tr>
+
+        </tbody>
+      </table>
+
+
+    </div>
+  </div>
+
+{% endblock %}

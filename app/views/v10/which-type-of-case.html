@@ -1,0 +1,58 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <form method="post" action="case-type-answer">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <!-- <span class="govuk-caption-l">Client and case details</span> -->
+              <h1 class="govuk-fieldset__heading">
+                 What level of help does your client need?
+              </h1>
+            </legend>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="case-type-controlled" name="case-type" type="radio" value="Civil controlled work or family mediation">
+                <label class="govuk-label govuk-radios__label" for="case-type-controlled">
+                  Civil controlled work or family mediation
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="case-type-certificated" name="case-type" type="radio" value="Civil certificated or licensed legal work">
+                <label class="govuk-label govuk-radios__label" for="case-type-certificated">
+                  Civil certificated or licensed legal work
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+
+      </form>
+
+    </div>
+
+    <div class="govuk-grid-column-one-third"><aside class="app-related-items" role="complementary"><h2 class="govuk-heading-s govuk-!-margin-bottom-0 govuk-!-padding-top-0">Guidance</h2><ul class="govuk-list govuk-!-font-size-16"><li><p><a target="_blank" rel="noreferrer noopener" class="govuk-link govuk-body-m" href="/documents/lc_guidance_controlled?assessment_code=20cbb2dd-1131-43ce-851b-a0501b73f1af&amp;referrer=level_of_help">Controlled work (PDF, 599KB)</a></p></li><li><p><a target="_blank" rel="noreferrer noopener" class="govuk-link govuk-body-m" href="/documents/lc_guidance_certificated?assessment_code=20cbb2dd-1131-43ce-851b-a0501b73f1af&amp;referrer=level_of_help">Certificated work (PDF, 1,046KB)</a></p></li><li><p><a target="_blank" rel="noreferrer noopener" class="govuk-link govuk-body-m" href="/documents/mental_health_guidance?assessment_code=20cbb2dd-1131-43ce-851b-a0501b73f1af&amp;referrer=level_of_help">Mental Health (PDF, 288KB)</a></p></li></ul></aside></div>
+  </div>
+
+{% endblock %}

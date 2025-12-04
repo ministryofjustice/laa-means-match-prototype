@@ -1,0 +1,249 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">Client and case details</span>
+      <h1 class="govuk-heading-l">Who does the matter involve?</h1>
+
+      <p class="govuk-hint">Choose the organisation whose action or decision is being challenged.</p>
+      
+      <form method="post" action="./check-answers-client-details">
+
+
+      {% if (data['setup-category'] == "Public law") %}
+
+    
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="matter-who" name="matter-who" type="radio" value="Central Government Department/Agency">
+                <label class="govuk-label govuk-radios__label" for="matter-who">
+                  Central Government Department/Agency
+                </label>
+                <div id="matter-who-hint" class="govuk-hint govuk-radios__hint">
+                  Code: BCGD
+                </div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="matter-who-2" name="matter-who" type="radio" value="Local Authority">
+                <label class="govuk-label govuk-radios__label" for="matter-who-2">
+                  Local Authority 
+                </label>
+                <div id="matter-who-2-hint" class="govuk-hint govuk-radios__hint">
+                  Code: BLOC
+                </div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="matter-who-3" name="matter-who" type="radio" value="Health service provider">
+                <label class="govuk-label govuk-radios__label" for="matter-who-3">
+                  Health service provider
+                </label>
+                <div id="matter-who-3-hint" class="govuk-hint govuk-radios__hint">
+                  Code: BHSP
+                </div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="matter-who-4" name="matter-who" type="radio" value="Discrimination">
+                <label class="govuk-label govuk-radios__label" for="matter-who-4">
+                  Discrimination
+                </label>
+                <div id="matter-who-4-hint" class="govuk-hint govuk-radios__hint">
+                  Code: BDIS
+                </div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="matter-who-5" name="matter-who" type="radio" value="Education service provider">
+                <label class="govuk-label govuk-radios__label" for="matter-who-5">
+                  Education service provider
+                </label>
+                <div id="matter-who-5-hint" class="govuk-hint govuk-radios__hint">
+                  Code: BESP
+                </div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="matter-who-6" name="matter-who" type="radio" value="Public Utility">
+                <label class="govuk-label govuk-radios__label" for="matter-who-6">
+                  Public Utility
+                </label>
+                <div id="matter-who-6-hint" class="govuk-hint govuk-radios__hint">
+                  Code: BPUB
+                </div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="matter-who-7" name="matter-who" type="radio" value="Private Company/organisation providing other public services">
+                <label class="govuk-label govuk-radios__label" for="matter-who-7">
+                  Private Company/organisation providing other public services
+                </label>
+                <div id="matter-who-7-hint" class="govuk-hint govuk-radios__hint">
+                  Code: BPRI
+                </div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="matter-who-8" name="matter-who" type="radio" value="Other">
+                <label class="govuk-label govuk-radios__label" for="matter-who-8">
+                  Other
+                </label>
+                <div id="matter-who-8-hint" class="govuk-hint govuk-radios__hint">
+                  Code: BOTH
+                </div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="matter-who-9" name="matter-who" type="radio" value="NASS advice">
+                <label class="govuk-label govuk-radios__label" for="matter-who-9">
+                  NASS advice
+                </label>
+                <div id="matter-who-8-hint" class="govuk-hint govuk-radios__hint">
+                  Code: BNAS
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        {% else %}
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="matter-client-1" name="matter-client" type="radio" value="Client is the petitioner in Divorce/Judicial Separation/Nullity/Dissolution of Civil Partnership">
+                <label class="govuk-label govuk-radios__label" for="matter-client-1">
+                  Client is the petitioner in Divorce/Judicial Separation/Nullity/Dissolution of Civil Partnership
+                </label>
+                <div id="matter-client-1-hint" class="govuk-hint govuk-radios__hint">
+                  Code: FPET                
+                </div>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="matter-client-2" name="matter-client" type="radio" value="Client is the respondent in Divorce/Judicial Separation/Dissolution of Civil Partnership">
+                <label class="govuk-label govuk-radios__label" for="matter-client-2">
+                  Client is the respondent in Divorce/Judicial Separation/Dissolution of Civil Partnership
+                </label>
+                <div id="matter-client-2-hint" class="govuk-hint govuk-radios__hint">
+                  Code: FRES
+                </div>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="matter-client-3" name="matter-client" type="radio" value="Where the client is seeking advice in connection with mediation – children">
+                <label class="govuk-label govuk-radios__label" for="matter-client-3">
+                  Where the client is seeking advice in connection with mediation – children
+                </label>
+                <div id="matter-client-3-hint" class="govuk-hint govuk-radios__hint">
+                  Code: FMEC
+                </div>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="matter-client-4" name="matter-client" type="radio" value="Where the client is seeking advice in connection with mediation – finance">
+                <label class="govuk-label govuk-radios__label" for="matter-client-4">
+                  Where the client is seeking advice in connection with mediation – finance
+                </label>
+                <div id="matter-client-4-hint" class="govuk-hint govuk-radios__hint">
+                  Code: FMEF
+                </div>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="matter-client-5" name="matter-client" type="radio" value="Where the client is seeking advice in connection with mediation – all issues">
+                <label class="govuk-label govuk-radios__label" for="matter-client-5">
+                  Where the client is seeking advice in connection with mediation – all issues
+                </label>
+                <div id="matter-client-5-hint" class="govuk-hint govuk-radios__hint">
+                  Code: FMEA
+                </div>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="matter-client-6" name="matter-client" type="radio" value="Client is seeking advice only">
+                <label class="govuk-label govuk-radios__label" for="matter-client-6">
+                  Client is seeking advice only
+                </label>
+                <div id="matter-client-6-hint" class="govuk-hint govuk-radios__hint">
+                  Code: FADV
+                </div>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="matter-client-7" name="matter-client" type="radio" value="Client is or would be the applicant where proceedings issued">
+                <label class="govuk-label govuk-radios__label" for="matter-client-7">
+                  Client is or would be the applicant where proceedings issued
+                </label>
+                <div id="matter-client-7-hint" class="govuk-hint govuk-radios__hint">
+                  Code: FAPP
+                </div>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="matter-client-8" name="matter-client" type="radio" value="Client is or would be the respondent where proceedings issued">
+                <label class="govuk-label govuk-radios__label" for="matter-client-8">
+                  Client is or would be the respondent where proceedings issued
+                </label>
+                <div id="matter-client-8-hint" class="govuk-hint govuk-radios__hint">
+                  Code: FREP
+                </div>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="matter-client-9" name="matter-client" type="radio" value="Client is a child with a guardian">
+                <label class="govuk-label govuk-radios__label" for="matter-client-9">
+                  Client is a child with a guardian
+                </label>
+                <div id="matter-client-9-hint" class="govuk-hint govuk-radios__hint">
+                  Code: FCHG
+                </div>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="matter-client-10" name="matter-client" type="radio" value="Client is a child instructing solicitor directly">
+                <label class="govuk-label govuk-radios__label" for="matter-client-10">
+                  Client is a child instructing solicitor directly
+                </label>
+                <div id="matter-client-10-hint" class="govuk-hint govuk-radios__hint">
+                  Code: FCHS
+                </div>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="matter-client-11" name="matter-client" type="radio" value="Other">
+                <label class="govuk-label govuk-radios__label" for="matter-client-11">
+                  Other
+                </label>
+                <div id="matter-client-11-hint" class="govuk-hint govuk-radios__hint">
+                  Code: FOTH
+                </div>
+              </div>
+
+            </div>
+          </fieldset>
+        </div>
+
+
+        {% endif %}
+
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
