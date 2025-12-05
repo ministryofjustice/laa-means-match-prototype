@@ -45,7 +45,7 @@ router.post(version + 'means-required-answer', function (req, res) {
     {
       res.redirect(version + 'non-means')
     } else {
-      res.redirect(version + 'matter-type')
+      res.redirect(version + 'check-answers-client-details')
     }
 })
 
