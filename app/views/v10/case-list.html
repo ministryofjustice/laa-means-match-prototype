@@ -50,12 +50,14 @@
 
         <tbody class="govuk-table__body">
 
-
+        {% if (data['caseComplete'] == true) %}
           <tr class="govuk-table__row">
             <td class="govuk-table__cell"><a href="#">Joe Bloggs</a></td>
             <td class="govuk-table__cell">CW-101122</td>
             <td class="govuk-table__cell" data-sort-value="2025.11.29">29 Nov 2025</td>
           </tr>
+        {% else %}
+        {% endif %}
 
           <tr class="govuk-table__row">
             <td class="govuk-table__cell"><a href="#">Jamal Thompson</a></td>

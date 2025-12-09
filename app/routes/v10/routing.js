@@ -71,5 +71,11 @@ router.post(version + 'client-declaration', function (req, res) {
     res.redirect(version + 'task-list-means-complete');
   });
 
+// Confirmation page
+router.post(version + 'confirmation', function (req, res) {
+    req.session.data.caseComplete = true;
+    res.redirect(version + 'case-list');
+  });
+
 
 }
