@@ -1,4 +1,4 @@
-{% extends "layouts/main.html" %}
+{% extends "layouts/main-v2-cases.html" %}
 
 {% block pageTitle %}
   Content page template – {{ serviceName }} – GOV.UK Prototype Kit
@@ -17,7 +17,7 @@
     <div class="govuk-grid-column-full width">
 
       <h1 class="govuk-heading-l">
-        Record civil controlled work
+        Your cases
       </h1>
 
       {{ govukButton({
@@ -54,7 +54,7 @@
           <tr class="govuk-table__row">
             <td class="govuk-table__cell"><a href="#">Joe Bloggs</a></td>
             <td class="govuk-table__cell">CW-101122</td>
-            <td class="govuk-table__cell" data-sort-value="2025.11.29">29 Nov 2025</td>
+            <td class="govuk-table__cell" data-sort-value="2025.12.9">9 Dec 2025</td>
           </tr>
         {% else %}
         {% endif %}
