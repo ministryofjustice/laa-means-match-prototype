@@ -4,12 +4,6 @@
   Content page template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
-{% block beforeContent %}
-  {{ govukBackLink({
-    text: "Back",
-    href: "javascript:window.history.back()"
-  }) }}
-{% endblock %}
 
 {% block content %}
 
@@ -28,10 +22,10 @@
       <nav class="moj-sub-navigation" aria-label="Sub navigation">
         <ul class="moj-sub-navigation__list">
           <li class="moj-sub-navigation__item">
-            <a class="moj-sub-navigation__link" aria-current="page" href="#">Recorded cases</a>
+            <a class="moj-sub-navigation__link" aria-current="page" href="#">In progress</a>
           </li>
           <li class="moj-sub-navigation__item">
-            <a class="moj-sub-navigation__link" href="#">In progress</a>
+            <a class="moj-sub-navigation__link" href="#">Recorded</a>
           </li>
         </ul>
       </nav> 
