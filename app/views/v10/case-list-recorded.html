@@ -1,0 +1,224 @@
+{% extends "layouts/main-v2-cases.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full width">
+
+      <h1 class="govuk-heading-l">
+        Your cases
+      </h1>
+
+      {{ govukButton({
+        text: "Record a new case",
+        href: "start-page"
+      }) }}
+
+      <nav class="moj-sub-navigation" aria-label="Sub navigation">
+        <ul class="moj-sub-navigation__list">
+          <li class="moj-sub-navigation__item">
+            <a class="moj-sub-navigation__link" href="case-list">In progress</a>
+          </li>
+          <li class="moj-sub-navigation__item">
+            <a class="moj-sub-navigation__link" aria-current="page" href="#">Recorded</a>
+          </li>
+        </ul>
+      </nav> 
+
+      <table class="govuk-table" data-module="moj-sortable-table">
+
+        <!-- <caption class="govuk-table__caption">Client Records</caption> -->
+
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header" aria-sort="none">Client name</th>
+            <th scope="col" class="govuk-table__header" aria-sort="none">Reference number</th>
+            <th scope="col" class="govuk-table__header" aria-sort="descending">Date recorded</th>
+          </tr>
+        </thead>
+
+        <tbody class="govuk-table__body">
+
+        {% if (data['caseComplete'] == true) %}
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><a href="#">Joe Bloggs</a></td>
+          <td class="govuk-table__cell">CW-101122</td>
+          <td class="govuk-table__cell" data-sort-value="2025.01.15">15 Jan 2025</td>
+        </tr>
+        {% else %}
+        {% endif %}
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><a href="#">Jamal Thompson</a></td>
+          <td class="govuk-table__cell">CW-102378</td>
+          <td class="govuk-table__cell" data-sort-value="2025.11.18">18 Nov 2025</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><a href="#">Emily Zhang</a></td>
+          <td class="govuk-table__cell">CW-100842</td>
+          <td class="govuk-table__cell" data-sort-value="2025.12.02">2 Dec 2025</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><a href="#">Mohammed Al-Farsi</a></td>
+          <td class="govuk-table__cell">CW-101765</td>
+          <td class="govuk-table__cell" data-sort-value="2025.10.22">22 Oct 2025</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><a href="#">Grace O'Connell</a></td>
+          <td class="govuk-table__cell">CW-103212</td>
+          <td class="govuk-table__cell" data-sort-value="2025.11.30">30 Nov 2025</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><a href="#">Rajesh Patel</a></td>
+          <td class="govuk-table__cell">CW-100329</td>
+          <td class="govuk-table__cell" data-sort-value="2025.10.14">14 Oct 2025</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><a href="#">Chloe Martin</a></td>
+          <td class="govuk-table__cell">CW-104501</td>
+          <td class="govuk-table__cell" data-sort-value="2025.11.04">4 Nov 2025</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><a href="#">Daniel Okafor</a></td>
+          <td class="govuk-table__cell">CW-100998</td>
+          <td class="govuk-table__cell" data-sort-value="2025.12.01">1 Dec 2025</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><a href="#">Hannah Müller</a></td>
+          <td class="govuk-table__cell">CW-102119</td>
+          <td class="govuk-table__cell" data-sort-value="2025.10.28">28 Oct 2025</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><a href="#">Youssef Nader</a></td>
+          <td class="govuk-table__cell">CW-105678</td>
+          <td class="govuk-table__cell" data-sort-value="2025.11.26">26 Nov 2025</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><a href="#">Sofia Rossi</a></td>
+          <td class="govuk-table__cell">CW-101342</td>
+          <td class="govuk-table__cell" data-sort-value="2025.10.18">18 Oct 2025</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><a href="#">Lucas Bennett</a></td>
+          <td class="govuk-table__cell">CW-106014</td>
+          <td class="govuk-table__cell" data-sort-value="2025.10.09">9 Oct 2025</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><a href="#">Amina Hassan</a></td>
+          <td class="govuk-table__cell">CW-101887</td>
+          <td class="govuk-table__cell" data-sort-value="2025.11.14">14 Nov 2025</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><a href="#">Thomas Reynolds</a></td>
+          <td class="govuk-table__cell">CW-103556</td>
+          <td class="govuk-table__cell" data-sort-value="2025.11.09">9 Nov 2025</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><a href="#">Isabella Novak</a></td>
+          <td class="govuk-table__cell">CW-104112</td>
+          <td class="govuk-table__cell" data-sort-value="2025.12.18">18 Dec 2025</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><a href="#">Omar Khalid</a></td>
+          <td class="govuk-table__cell">CW-100674</td>
+          <td class="govuk-table__cell" data-sort-value="2025.10.27">27 Oct 2025</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><a href="#">Natalie Brooks</a></td>
+          <td class="govuk-table__cell">CW-105209</td>
+          <td class="govuk-table__cell" data-sort-value="2025.11.17">17 Nov 2025</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><a href="#">Mateo Alvarez</a></td>
+          <td class="govuk-table__cell">CW-102663</td>
+          <td class="govuk-table__cell" data-sort-value="2025.10.31">31 Oct 2025</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><a href="#">Priya Desai</a></td>
+          <td class="govuk-table__cell">CW-101490</td>
+          <td class="govuk-table__cell" data-sort-value="2025.11.29">29 Nov 2025</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><a href="#">Jonas Lindström</a></td>
+          <td class="govuk-table__cell">CW-104870</td>
+          <td class="govuk-table__cell" data-sort-value="2025.12.03">3 Dec 2025</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><a href="#">Keisha Brown</a></td>
+          <td class="govuk-table__cell">CW-103041</td>
+          <td class="govuk-table__cell" data-sort-value="2026.01.05">5 Jan 2026</td>
+        </tr>
+
+        </tbody>
+      </table>
+
+    
+    <!-- PAGINATION --> 
+
+      <div class="moj-pagination">
+          <nav class="govuk-pagination moj-pagination__pagination " aria-label="Pagination">
+            <ul class="govuk-pagination__list">
+              <li class="govuk-pagination__item govuk-pagination__item--current">
+                <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1" aria-current="page">
+                  1
+                </a>
+              </li>
+              <li class="govuk-pagination__item">
+                <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2">
+                  2
+                </a>
+              </li>
+              <li class="govuk-pagination__item">
+                <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 3">
+                  3
+                </a>
+              </li>
+            </ul>
+            <div class="govuk-pagination__next">
+              <a class="govuk-link govuk-pagination__link" href="#" rel="next">
+                <span class="govuk-pagination__link-title">
+                  Next
+                </span>
+                <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                  <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+                </svg>
+              </a>
+            </div>
+          </nav>
+          <p class="moj-pagination__results">Showing 1 to 20 of 56 total results</p>
+        </div>
+    
+    
+      
+    
+    
+
+
+    </div>
+  </div>
+
+{% endblock %}
