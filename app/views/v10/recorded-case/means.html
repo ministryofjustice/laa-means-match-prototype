@@ -1,58 +1,62 @@
 {% extends "layouts/main-v2.html" %}
 
 
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "../case-list-recorded"
+  }) }}
+{% endblock %}
+
+
 {% block content %}
 
 <!--- CASE HEADER -->
-  
-    
-    <h1 class="govuk-heading-l">{{ data['name'] or "Joe Bloggs" }}</h1>
-    <p class="govuk-body govuk-!-margin-bottom-1"><span class="govuk-!-font-weight-bold">Client's legal aid number:</span> LA-100054</p>
-    <p class="govuk-body govuk-!-margin-bottom-1"><span class="govuk-!-font-weight-bold">Reference number:</span> CW-101122</p>
-    <p class="govuk-body"><span class="govuk-!-font-weight-bold">Recorded on:</span> 15 Jan 2026</p>
+
+<div class="govuk-form-group">
+  <h1 class="govuk-heading-xl">{{ data['name'] or "Keisha Brown" }}</h1>
+  <strong class="govuk-tag govuk-tag--grey govuk-!-margin-bottom-3">Recorded</strong>
+  <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Client's legal aid number:<span class="govuk-body-l"> LA-100194</span></h2>
+  <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Reference number:<span class="govuk-body-l"> CW-103041</span></h2>
+  <h2 class="govuk-heading-m">Recorded on:<span class="govuk-body-l"> 15 Jan 2026</span></h2>
+</div>
 
 <!-- SUB-NAV -->
 
 {%- from "moj/components/sub-navigation/macro.njk" import mojSubNavigation -%}
 
-<div class="govuk-form-group"><nav class="moj-sub-navigation govuk-!-margin-bottom-0" aria-label="Sub navigation">
+<nav class="moj-sub-navigation" aria-label="Sub navigation">
 
   <ul class="moj-sub-navigation__list">
     <li class="moj-sub-navigation__item">
-      <a class="moj-sub-navigation__link" href="../case1/clientdetails.html">Client details</a>
+      <a class="moj-sub-navigation__link" href="./client-details">Client and case details</a>
     </li>
 
     <li class="moj-sub-navigation__item">
-      <a class="moj-sub-navigation__link" href="../case1/scope.html">Scope</a>
+      <a class="moj-sub-navigation__link" aria-current="page" href="./means">Means assessment</a>
     </li>
 
     <li class="moj-sub-navigation__item">
-      <a class="moj-sub-navigation__link" aria-current="page" href="../case1/financial_eligibility.html">Means assessment</a>
-    </li>
-
-    <li class="moj-sub-navigation__item">
-      <a class="moj-sub-navigation__link" href="../case1/case_timeline.html">Notes and history</a>
+      <a class="moj-sub-navigation__link" href="./evidence">Evidence and declaration</a>
     </li>
   </ul>
   </ul>
 
 </nav>
-</div>
 
-<h2 class="govuk-heading-m">Means assessment</h2>
 
-<!--eligibility result-->
 
-<h2 class="govuk-heading-s govuk-!-margin-bottom-2">Dermination:
-  <!-- <strong class="govuk-tag govuk-tag--green">
-    Eligible
-  </strong> -->
+<!-- CONTENT -->
+
+<h2 class="govuk-heading-m govuk-!-margin-bottom-5">Means assessment</h2>
+
+<p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-2">Dermination:
   <span class="govuk-body">Eligible</span>
-</h2>
+</p>
 
-<h2 class="govuk-heading-s govuk-!-margin-bottom-0">Contribution: 
+<p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-0">Contribution: 
   <span class="govuk-body">No contribution</span>
-</h2>
+</p>
 
 
 
@@ -67,23 +71,20 @@
         <div class="summary-box summary-box-eligible">
           <p class="govuk-body-l summary-list-subheader govuk-!-margin-bottom-0">Gross monthly income</p>
           <h3 class="govuk-heading-l govuk-!-margin-bottom-2 govuk-!-margin-top-0">£17.32</h3>
-          <p class="govuk-body govuk-!-margin-top-3">Your client’s total is below the gross monthly income upper limit
-            (£2,657). <a class="summary-box-link" aria-label="See Income calculation"
-              href="#income-calculation-section">See calculation.</a></p>
+          <p class="govuk-body govuk-!-margin-top-3">Below upper limit (£2,657).</p>
+          <p><a class="summary-box-link" aria-label="See Income calculation" href="#income-calculation-section">See calculation.</a></p>
         </div>
         <div class="summary-box summary-box-eligible">
           <p class="govuk-body-l summary-list-subheader govuk-!-margin-bottom-0">Disposable monthly income</p>
           <h3 class="govuk-heading-l govuk-!-margin-bottom-2 govuk-!-margin-top-0">-£297.55</h3>
-          <p class="govuk-body govuk-!-margin-top-3">Your client’s total is below the disposable monthly income upper
-            limit (£733). <a class="summary-box-link" aria-label="See Outgoings calculation"
-              href="#outgoings-calculation-section">See calculation.</a></p>
+          <p class="govuk-body govuk-!-margin-top-3">Below upper limit (£733).</p>
+          <p><a class="summary-box-link" aria-label="See Outgoings calculation" href="#outgoings-calculation-section">See calculation.</a></p>
         </div>
         <div class="summary-box summary-box-eligible">
           <p class="govuk-body-l summary-list-subheader govuk-!-margin-bottom-0">Disposable capital</p>
           <h3 class="govuk-heading-l govuk-!-margin-bottom-2 govuk-!-margin-top-0">£0.00</h3>
-          <p class="govuk-body govuk-!-margin-top-3">Your client’s total is below the disposable capital upper limit
-            (£3,000). <a class="summary-box-link" aria-label="See Capital calculation"
-              href="#capital-calculation-section">See calculation.</a></p>
+          <p class="govuk-body govuk-!-margin-top-3">Below upper limit (£3,000).</p>
+          <p><a class="summary-box-link" aria-label="See Capital calculation" href="#capital-calculation-section">See calculation.</a></p>
         </div>
       </div>
       <form class="form" action="{{ version }}/../../../../change_answer/financial_eligibility/CCQ_option1_tags"
@@ -91,8 +92,7 @@
 
         <!--no ability to edit if case is closed -->
 
-        <h2 class="govuk-heading-m">How we calculated whether your client is financially eligible for civil controlled
-          legal aid work</h2>
+        <h2 class="govuk-heading-m">How we calculated your client’s financial eligibility</h2>
         <div class="govuk-accordion" data-module="govuk-accordion" data-govuk-accordion-init="">
           <div class="govuk-accordion__controls"><button type="button" class="govuk-accordion__show-all"
               aria-expanded="false"><span

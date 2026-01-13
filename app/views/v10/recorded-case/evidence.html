@@ -1,0 +1,47 @@
+{% extends "layouts/main-v2.html" %}
+
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "../case-list-recorded"
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+
+<!--- CASE HEADER -->
+
+<div class="govuk-form-group">
+  <h1 class="govuk-heading-xl">{{ data['name'] or "Keisha Brown" }}</h1>
+  <strong class="govuk-tag govuk-tag--grey govuk-!-margin-bottom-3">Recorded</strong>
+  <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Client's legal aid number:<span class="govuk-body-l"> LA-100194</span></h2>
+  <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Reference number:<span class="govuk-body-l"> CW-103041</span></h2>
+  <h2 class="govuk-heading-m">Recorded on:<span class="govuk-body-l"> 15 Jan 2026</span></h2>
+</div>
+
+<!-- SUB-NAV -->
+
+{%- from "moj/components/sub-navigation/macro.njk" import mojSubNavigation -%}
+
+<nav class="moj-sub-navigation" aria-label="Sub navigation">
+
+  <ul class="moj-sub-navigation__list">
+    <li class="moj-sub-navigation__item">
+      <a class="moj-sub-navigation__link" href="./client-details">Client and case details</a>
+    </li>
+
+    <li class="moj-sub-navigation__item">
+      <a class="moj-sub-navigation__link" href="./means">Means assessment</a>
+    </li>
+
+    <li class="moj-sub-navigation__item">
+      <a class="moj-sub-navigation__link" aria-current="page" href="./evidence">Evidence and declaration</a>
+    </li>
+  </ul>
+
+</nav>
+
+{% endblock %}
+
