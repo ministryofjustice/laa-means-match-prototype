@@ -14,11 +14,20 @@
 <!--- CASE HEADER -->
 
 <div class="govuk-form-group">
+  <strong class="govuk-tag govuk-tag--purple govuk-!-margin-bottom-3">Recorded</strong>
   <h1 class="govuk-heading-xl">{{ data['name'] or "Keisha Brown" }}</h1>
-  <strong class="govuk-tag govuk-tag--grey govuk-!-margin-bottom-3">Recorded</strong>
   <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Client's legal aid number:<span class="govuk-body-l"> LA-100194</span></h2>
   <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Reference number:<span class="govuk-body-l"> CW-103041</span></h2>
   <h2 class="govuk-heading-m">Recorded on:<span class="govuk-body-l"> 15 Jan 2026</span></h2>
+
+  <div class="govuk-button-group">
+    <a href="#" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button" data-govuk-button-init="">
+      Save as a printable PDF
+    </a>
+    <!-- <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button" data-govuk-button-init="">
+      Generate legal help form
+    </button> -->
+  </div>
 </div>
 
 <!-- SUB-NAV -->
