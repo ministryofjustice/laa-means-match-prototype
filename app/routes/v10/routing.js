@@ -74,10 +74,16 @@ router.post(version + 'client-declaration', function (req, res) {
 
 // GET for task list
 router.get(version + 'task-list-means-complete', function (req, res) {
+    // Initialize session data if missing
+    req.session.data = req.session.data || {};
+    req.session.data.evidenceComplete = req.session.data.evidenceComplete || false;
+    req.session.data.declarationComplete = req.session.data.declarationComplete || false;
+
     res.render(version + 'task-list-means-complete', {
         data: req.session.data,
     });
 });
+
 
 
 // Confirmation page
