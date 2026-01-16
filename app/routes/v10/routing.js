@@ -75,7 +75,8 @@ router.post(version + 'client-declaration', function (req, res) {
 // GET for task list
 router.get(version + 'task-list-means-complete', function (req, res) {
     res.render(version + 'task-list-means-complete', {
-        data: req.session.data
+        evidenceComplete: req.session.data.evidenceComplete,
+        declarationComplete: req.session.data.declarationComplete
     });
 });
 
