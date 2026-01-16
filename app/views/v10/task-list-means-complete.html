@@ -74,7 +74,7 @@
 
       <h2 class="govuk-heading-m govuk-!-margin-top-5">Evidence and declarations</h2>
 
-  {% if (data['declarationComplete'] == true) and (data['evidenceComplete'] == true) %}
+  {% if data['declarationComplete'] and data['evidenceComplete'] %}
 
       {{ govukTaskList({
         idPrefix: "third-section",
@@ -109,7 +109,7 @@
         }) }}
       </div>
 
-  {% elseif (data['evidenceComplete'] == true) %}
+  {% elseif data['evidenceComplete'] %}
 
       {{ govukTaskList({
         idPrefix: "third-section",
