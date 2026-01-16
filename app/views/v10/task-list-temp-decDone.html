@@ -1,0 +1,117 @@
+{% extends "layouts/main-v2.html" %}
+
+{% block pageTitle %}
+  Task list template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">{{ data['name'] or "Joe Bloggs" }}</h1>
+      <p class="govuk-body govuk-!-margin-bottom-1">Client's legal aid number: LA-100054</p>
+      <p class="govuk-body">Reference number: CW-101122</p>
+
+
+      <h2 class="govuk-heading-m">About your client</h2>
+
+      {% set completedStatus = {
+        text: "Completed"
+      } %}
+
+      {% set incompleteStatus = {
+        tag: {
+          text: "Incomplete",
+          classes: "govuk-tag--blue"
+        }
+      } %}
+
+      {# To switch between the completed and incomplete statues, use some inline logic within the component below, like this: "status: (completedStatus if ... else incompleteStatus)" #}
+
+      {{ govukTaskList({
+        idPrefix: "first-section",
+        items: [
+          {
+            title: {
+              text: "Client and case details"
+            },
+            href: "./check-answers-client-details",
+            status: completedStatus
+          }
+        ]
+      }) }}
+
+      <h2 class="govuk-heading-m govuk-!-margin-top-5">Means assessment</h2>
+
+      {{ govukTaskList({
+        idPrefix: "second-section",
+        items: [
+          {
+            title: {
+              text: "Income"
+            },
+            href: "#",
+            status: completedStatus
+          },
+          {
+            title: {
+              text: "Capital"
+            },
+            href: "#",
+            status: completedStatus
+          }
+        ]
+      }) }}
+
+        <div class="eligibility-result-box">
+          <h3 class="govuk-heading-s">Eligibility result</h3>
+          <p class="govuk-body">Your client qualifies financially for civil legal aid based on the information you entered.</p>
+          <p class="govuk-!-margin-bottom-0"><a class="govuk-link" href="#">View result</a></p>
+        </div>
+
+      <h2 class="govuk-heading-m govuk-!-margin-top-5">Evidence and declarations</h2>
+
+      {{ govukTaskList({
+        idPrefix: "third-section",
+        items: [
+          {
+            title: {
+              text: "Evidence"
+            },
+            href: "#",
+            status: completedStatus
+          },
+          {
+            title: {
+              text: "Client declaration"
+            },
+            href: "#",
+            status: completedStatus
+          }
+        ]
+      }) }}
+
+      <div class="govuk-button-group govuk-!-margin-top-8">
+        {{ govukButton({
+          text: "Submit controlled work",
+          href: "confirmation" 
+        }) }}
+
+        {{ govukButton({ 
+          text: "Save and return later",
+          classes: "govuk-button--secondary", 
+          href: "case-list" 
+        }) }}
+      </div>
+
+  
+      
+
+
+
+    </div>
+  </div>
+{% endblock %}
