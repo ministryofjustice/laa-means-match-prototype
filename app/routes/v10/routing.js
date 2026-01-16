@@ -61,19 +61,19 @@ router.post(version + 'evidence-capital', function (req, res) {
 
 // Check answers - evidence 
 router.post(version + 'check-answers-evidence', function (req, res) {
-    req.session.data.evidenceComplete = true;
+    req.session.data.evidenceComplete = 'true';
     res.redirect(version + 'task-list-means-complete');
   });
 
 // Client declaration
 router.post(version + 'client-declaration', function (req, res) {
-    req.session.data.declarationComplete = true;
+    req.session.data.declarationComplete = 'true';
     res.redirect(version + 'task-list-means-complete');
   });
 
 // Confirmation page
 router.post(version + 'confirmation', function (req, res) {
-    req.session.data.caseComplete = true;
+    req.session.data.caseComplete = 'true';
     res.redirect(version + 'case-list');
   });
 

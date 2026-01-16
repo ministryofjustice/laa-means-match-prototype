@@ -74,7 +74,7 @@
 
       <h2 class="govuk-heading-m govuk-!-margin-top-5">Evidence and declarations</h2>
 
-  {% if (data['declarationComplete'] == true) and (data['evidenceComplete'] == true) %}
+  {% if (data['declarationComplete'] == 'true') and (data['evidenceComplete'] == 'true') %}
 
       {{ govukTaskList({
         idPrefix: "third-section",
@@ -108,8 +108,8 @@
           href: "case-list" 
         }) }}
       </div>
-      
-  {% elseif (data['evidenceComplete'] == true ) %}
+
+  {% elseif (data['evidenceComplete'] == 'true') %}
 
       {{ govukTaskList({
         idPrefix: "third-section",
@@ -118,7 +118,7 @@
             title: {
               text: "Evidence"
             },
-            href: "#",
+            href: "check-answers-evidence",
             status: completedStatus
           },
           {
