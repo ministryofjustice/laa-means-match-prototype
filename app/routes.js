@@ -14,5 +14,6 @@ router.get('/', function (req, res) {
 require('./routes/v8/routing.js')(router)
 require('./routes/v9/routing.js')(router)
 require('./routes/v10/routing.js')(router)
+require('./routes/v11/routing.js')(router)
 
 module.exports = router
