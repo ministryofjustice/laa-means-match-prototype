@@ -8,15 +8,17 @@
 
   <p class="govuk-body govuk-!-font-size-16">Client: <strong style="padding-right:10px">Joe Bloggs</strong> Client's legal aid number: <strong style="padding-right:10px">LA-100054</strong> Reference number: <strong style="padding-right:10px">CW-101122</strong></p>
 
-  <h1 class="govuk-heading-xl">
+
+  <h1 class="govuk-heading-xl govuk-!-margin-top-8">
     Record civil controlled work
   </h1>
-<div class="govuk-grid-row">
+
+  <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
 
       <!-- CLIENT AND CASE DETAILS -->
-      <h2 class="govuk-heading-l govuk-!-margin-top-8">
+      <h2 class="govuk-heading-l govuk-!-margin-top-5">
         Client and case details
       </h2>
       
@@ -453,10 +455,84 @@
         </div>
       </dl>
 
+      <!-- EVIDENCE -->
+      <h2 class="govuk-heading-l govuk-!-margin-top-8">
+        Evidence
+      </h2>
+
+      <dl class="govuk-summary-list app-summary-list--wide-keys">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Employment (PAYE) income
+          </dt>
+          <dd class="govuk-summary-list__value app-summary-list__value--right">
+            {{ data['employment-income'] or "Wage slips" }}
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Other income
+          </dt>
+          <dd class="govuk-summary-list__value app-summary-list__value--right">
+            {{ data['housing'] or "Bank statement" }}
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Housing costs
+          </dt>
+          <dd class="govuk-summary-list__value app-summary-list__value--right">
+            {{ data['other-income'] or "No evidence required" }}
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Capital
+          </dt>
+          <dd class="govuk-summary-list__value app-summary-list__value--right">
+            {{ data['capital'] or "No evidence required" }}
+          </dd>
+        </div>
+      </dl>
 
 
+      <!-- CLIENT DECLARATION -->
+      <h2 class="govuk-heading-l govuk-!-margin-top-8">
+        Client declaration
+      </h2>
 
+      <h2 class="govuk-heading-m">
+        Confirm the following
+      </h2>
 
+      <p>Joe Bloggs agrees that:</p>
+
+      <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+        <li>they’ve instructed me, the provider, to act on their behalf</li>
+        <li>they’ve read the <a class="govuk-link" href="#">LAA privacy policy (opens in a new window or tab)</a></li>
+        <li>the information they’ve given is complete and correct</li>
+        <li>they’ll report any changes to their financial situation immediately
+        </ul>
+
+      <div class="govuk-warning-text govuk-!-margin-bottom-2">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-visually-hidden">Warning</span>
+          <p class="govuk-!-font-weight-bold govuk-!-margin-bottom-1">If they give wrong or incomplete information, do not report changes or are found to have committed benefit fraud, they may:</p>
+          <ul class="govuk-list govuk-list--bullet govuk-!-font-weight-bold">
+            <li>be prosecuted</li>
+            <li>need to pay a financial penalty</li>
+            <li>have their legal aid stopped and have to pay back the costs</li>
+          </ul>
+        </strong>
+      </div>
+
+      <!-- Signature -->
+      <p class="govuk-body govuk-!-font-weight-bold">Client signature:</p>
+      <p class="govuk-body govuk-!-font-weight-bold">Date:</p>
 
       
 
