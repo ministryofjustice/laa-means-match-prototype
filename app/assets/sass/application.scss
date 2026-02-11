@@ -35,10 +35,19 @@
   background-color: #f3f2f1;
 }
 
+.summary-box-print {
+  background-color: none;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #b1b4b6;
+}
+
 .summary-box-holder {
   display: flex;
   align-items: stretch;
 }
+
+
 
 // CCQ results page
 
@@ -136,6 +145,22 @@
 .govuk-tag.govuk-tag--custom-red {
   background-color: #942514;
   color: white;
+}
+
+// Print view
+
+.app-summary-list__value--right {
+  text-align: right;
+}
+
+@media (min-width: 40.0625em) {
+  .app-summary-list--wide-keys .govuk-summary-list__key {
+    width: 45%;
+  }
+
+  .app-summary-list--wide-keys .govuk-summary-list__value {
+    width: 55%;
+  }
 }
 
 
