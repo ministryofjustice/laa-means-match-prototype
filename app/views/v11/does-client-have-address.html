@@ -17,35 +17,29 @@
     <div class="govuk-grid-column-two-thirds">
 
 
-      <form class="form" action="./does-client-have-address" method="post">
+      <form class="form" action="./does-client-have-address-answer" method="post">
 
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
               <span class="govuk-caption-l">Client and case details</span>
               <h1 class="govuk-fieldset__heading">
-                 Does your client have a National Insurance number?
+                 Does your client have a home address?
               </h1>
             </legend>
+            <p>The home address is the place that they normally live in, and sometimes called the main dwelling.</p>
+
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="nino-yes" name="nino" type="radio" data-aria-controls="conditional-nino">
-                <label class="govuk-label govuk-radios__label" for="nino-yes">
+                <input class="govuk-radios__input" id="have-address-yes" name="have-address" type="radio">
+                <label class="govuk-label govuk-radios__label" for="have-address-yes">
                   Yes
                 </label>
               </div>
-              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-nino">
-                <div class="govuk-form-group">
-                  <label class="govuk-label" for="nino">
-                    National Insurance number
-                  </label>
-                  <input class="govuk-input govuk-!-width-one-third" id="nino-number" name="nino-number">
-                </div>
-              </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="nino-no" name="nino" type="radio" value="No">
-                <label class="govuk-label govuk-radios__label" for="nino-no">
-                  No
+                <input class="govuk-radios__input" id="have-address-no" name="have-address" type="radio" value="No, they have no fixed address">
+                <label class="govuk-label govuk-radios__label" for="have-address-no">
+                  No, they have no fixed address
                 </label>
               </div>
             </div>

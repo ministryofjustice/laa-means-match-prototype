@@ -39,6 +39,16 @@ router.post(version + 'legal-aid-before-answer', function (req, res) {
     }
 })
 
+// Does client have home address question
+router.post(version + 'does-client-have-address-answer', function (req, res) {
+  if (req.session.data['have-address'] == "No, they have no fixed address")
+    {
+      res.redirect(version + 'means-required')
+    } else {
+      res.redirect(version + 'client-find-address')
+    }
+})
+
 // Means assessment required question
 router.post(version + 'means-required-answer', function (req, res) {
   if (req.session.data['means-required'] == "No")
