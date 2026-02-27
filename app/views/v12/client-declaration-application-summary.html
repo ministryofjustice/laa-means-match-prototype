@@ -1,0 +1,52 @@
+{% extends "layouts/main-v2.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">Client declaration</span>
+      <h1 class="govuk-heading-l">
+        Print and sign the declaration
+      </h1>
+
+      <p>Print the details you entered for your client and get them to sign the declaration.</p>
+
+
+      <p>You should keep a copy along with any evidence provided by your client. Your client’s file may be audited and assessed by the LAA at a later date.</p>
+
+      <a href="client-declaration-print" target="_blank" class="govuk-button govuk-button--secondary">Print declaration</a>
+
+      <h2 class="govuk-heading-m">
+        Confirmation of signed declaration
+      </h2>
+
+      <p>The date your client signs the declaration is your case start date and the date you can bill from.</p>
+
+      <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="declaration" name="declaration" type="checkbox" value="Yes">
+          <label class="govuk-label govuk-checkboxes__label" for="declaration">
+            I confirm that I have a signed declaration from my client
+          </label>
+        </div>
+      </div>
+
+      <a href="task-list-temp-decDone" class="govuk-button govuk-!-margin-top-5">Save and continue</a>
+      
+
+    </div>
+  </div>
+
+{% endblock %}
