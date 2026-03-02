@@ -17,7 +17,7 @@ router.post(version + 'case-type-answer', function (req, res) {
 router.post(version + 'ecf-answer', function (req, res) {
   if (req.session.data['ecf'] == "Yes")
     {
-      res.redirect(version + 'ineligible')
+      res.redirect(version + 'ecf-dropout')
     } else {
       res.redirect(version + 'legal-aid-before')
     }
