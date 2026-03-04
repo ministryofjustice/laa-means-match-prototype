@@ -19,16 +19,20 @@
     <div class="govuk-summary-card">
       <div class="govuk-summary-card__title-wrapper">
         <h2 class="govuk-summary-card__title govuk-!-font-size-27">
-          Version 12
+          Version 12 
+          {{govukTag({
+            text: "In progress",
+            classes: "govuk-tag--green"
+          })}}
         </h2>
         <p class="govuk-!-margin-top-1 govuk-!-margin-bottom-0">Mar 2026</p>
       </div>
       <div class="govuk-summary-card__content">
-        <p class="govuk-body">WIP:</p>
-        <!-- <ul class="govuk-list govuk-list--bullet">
-          <li>New version of client declaration closer aligned to how Civil Apply works</li>
-          <li>The print button produces a copy of all answers, plus a declaration, with space for the client to sign at the bottom</li>
-        </ul> -->
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Iterations to ineligible journey to include Save to pdf options at end points of the journey</li>
+          <li>Added ECF dropout screen</li>
+          <li>Added question to determine if a client has a home address</li>
+        </ul>
 
         <a href="v12/setup" class="govuk-button govuk-!-margin-bottom-4">View prototype</a>
 
