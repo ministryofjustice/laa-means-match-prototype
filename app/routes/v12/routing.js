@@ -31,7 +31,7 @@ router.post(version + 'legal-aid-before-answer', function (req, res) {
     } 
     else if (req.session.data['legal-aid-before'] == "Yes, about a different matter")
     {
-      res.redirect(version + 'legal-aid-id')
+      res.redirect(version + 'client-details')
     }
     else
     {
