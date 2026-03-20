@@ -59,6 +59,26 @@ router.post(version + 'means-required-answer', function (req, res) {
     }
 })
 
+// Do they have evidence question
+router.post(version + 'evidence-answer', function (req, res) {
+  if (req.session.data['evidence'] == "No")
+    {
+      res.redirect(version + 'no-evidence-reason')
+    } else {
+      res.redirect(version + 'evidence-income')
+    }
+})
+
+// No evidence reason question
+router.post(version + 'no-evidence-reason', function (req, res) {
+  if (req.session.data['evidence'] == "No")
+    {
+      res.redirect(version + 'check-answers-evidence-none')
+    } else {
+      res.redirect(version + 'check-answers-evidence')
+    }
+})
+
 // Evidence - income question
 router.post(version + 'evidence-income', function (req, res) {
     res.redirect(version + 'evidence-capital');
