@@ -33,45 +33,29 @@
             <a class="govuk-link" href="./do-they-have-evidence">Change<span class="govuk-visually-hidden"> whether they have evidence</span></a>
           </dd>
         </div>
+
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Employment (PAYE) income
+            Income
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['employment-income'] or "Wage slips" }}
+            <p><strong>Employed (PAYE) income</strong><br>
+            Wage slips</p>
+
+            <p><strong>Other income</strong><br>
+            {{ data['other-income'] or "Student loan letter" }}</p>
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="./evidence-income">Change<span class="govuk-visually-hidden"> evidence of employment income</span></a>
           </dd>
         </div>
+
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Other income
+            Expenditure and capital
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['housing'] or "Bank statement" }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="./evidence-income">Change<span class="govuk-visually-hidden"> evidence of other income</span></a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Housing costs
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['other-income'] or "No evidence required" }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="./evidence-capital">Change<span class="govuk-visually-hidden"> evidence of housing costs</span></a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Capital
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['capital'] or "No evidence required" }}
+            {{ data['capital'] or "Evidence of expenditure and capital not required" }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="./evidence-capital">Change<span class="govuk-visually-hidden"> evidence of capital</span></a>
