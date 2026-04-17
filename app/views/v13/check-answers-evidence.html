@@ -1,0 +1,87 @@
+{% extends "layouts/main-v2.html" %}
+
+
+{% block pageTitle %}
+  Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <span class="govuk-caption-l">Evidence</span>
+      <h1 class="govuk-heading-l">
+        Check your answers
+      </h1>
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Do you have evidence?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Yes
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="./do-they-have-evidence">Change<span class="govuk-visually-hidden"> whether they have evidence</span></a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Income
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p><strong>Employed (PAYE) income</strong><br>
+            Wage slips</p>
+
+            <p><strong>Other income</strong><br>
+              {% if data['other-income'] %}
+                {{ data['other-income'] }}
+              {% else %}
+                Student loan letter
+              {% endif %}
+            </p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="./evidence-income">Change<span class="govuk-visually-hidden"> evidence of employment income</span></a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Expenditure and capital
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['capital'] %}
+                {{ data['capital'] }}
+              {% else %}
+                Evidence of expenditure and capital not required
+              {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="./evidence-capital">Change<span class="govuk-visually-hidden"> evidence of capital</span></a>
+          </dd>
+      </dl>
+
+
+      <!-- <form method="post">
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+      </form> -->
+
+      <!-- TEMP -->
+      <a href="task-list-temp-evidenceDone" class="govuk-button govuk-!-margin-top-5">Save and continue</a>
+
+
+    </div>
+  </div>
+{% endblock %}

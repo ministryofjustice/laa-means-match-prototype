@@ -1,0 +1,133 @@
+{% extends "layouts/main-v2-search.html" %}
+
+{% block pageTitle %}
+  Search for a case – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block content %}
+<!--Heading-->
+
+    
+<div class="govuk-grid-row"> 
+  <div class="govuk-grid-column-two-thirds">
+    
+    <h1 class="govuk-heading-l">
+      Search for a case
+    </h1>
+  </div>
+</div>
+<p>Enter details in at least one field to search for a case.</p>
+
+
+<!--Search box-->
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <div style="padding: 15px 20px 0px 20px;
+    border-bottom: 1px solid transparent;
+    background-color: #f3f2f1;" class="searchpanel govuk-!-margin-bottom-6">
+
+      <div class="govuk-form-group govuk-!-width-one-third" role="search">
+        <h2 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--s" for="filterName">
+            Client name
+          </label>
+        </h2>
+        <input class="govuk-input" id="filterName" name="filterName" type="search" aria-describedby="search-hint" aria-description="Will filter the table of cases">
+      </div>
+
+      <div class="govuk-form-group govuk-!-width-one-third" role="search">
+        <h2 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--s" for="filterCaseId">
+            Reference number (UFN)
+          </label>
+        </h2>
+        <div id="filterCaseId-hint" class="govuk-hint">
+          For example, CW-123456
+        </div>
+        <input class="govuk-input" id="filterCaseId" name="filterCaseId" type="search" aria-describedby="search-hint" aria-description="Will filter the table of cases">
+      </div>
+      
+
+      <div id="filters" class="govuk-date-input">
+        <div class="govuk-date-input__item">
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" for="filterbuttonContainer">
+              Status
+            </label>
+            <select class="govuk-select" id="filterbuttonContainer" name="filterbuttonContainer">
+              <option value="Show all" selected onclick="filterSelection('all')">Show all</option>
+              <option value="Not assigned" onclick="filterSelection('none')">In progress</option>
+              <option value="In progress" onclick="filterSelection('in-progress')">Recorded</option>
+            </select>
+          </div>
+        </div>
+
+      <div class="govuk-button-group">
+        <button type="submit" class="govuk-button" data-module="govuk-button" onclick="search()" id="searchButton">
+          Search
+        </button>
+
+        <a class="govuk-link" href="#" onclick="clearsearch()">Clear all</a>
+      </div>
+            
+    </div>
+    </div>
+
+ <!--Search results table-->  
+
+    <div style="display:none" id="resultsTable">
+      <h3 class="govuk-heading-m">1 result</h3>
+      <table class="govuk-table" data-module="moj-sortable-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header" aria-sort="none">Client name</th>
+            <th scope="col" class="govuk-table__header" aria-sort="none">Reference number</th>
+            <th scope="col" class="govuk-table__header" aria-sort="none">Last updated</th>
+            <th scope="col" class="govuk-table__header" aria-sort="none">Status</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          {% for case, value in data %}
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="#" id="{{value.id}}">{{value.fullName}}</a></td>
+              <td class="govuk-table__cell">{{value.caseReference}}</td>
+              <td class="govuk-table__cell">{{value.caselistRecieved}}</td>
+              <td class="govuk-table__cell">{{value.caseStatus}}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+    </div>
+
+<!--on click of search button show results table-->
+
+    <script>
+      function search() {
+        var x = document.getElementById("resultsTable");
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        } else {
+          x.style.display = "block";
+        }
+      }
+      </script>
+
+ <!--on click clear link hide results table-->
+
+
+    <script>
+      function clearsearch() {
+        var x = document.getElementById("resultsTable");
+        if (x.style.display === "block") {
+          x.style.display = "none";
+        } else {
+          x.style.display = "none";
+        }
+      }
+      </script>
+
+{% endblock %}
+

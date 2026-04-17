@@ -1,0 +1,82 @@
+{% extends "layouts/main-v2.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">Evidence</span>
+      <h1 class="govuk-heading-l">What's the reason for not having evidence?</h1>
+
+      <p class="govuk-body">You can only assess a client’s financial eligibility without evidence if one of the following reasons applies.</p>
+
+      <form method="post">
+
+      <div class="govuk-form-group">
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="no-evidence-1" name="no-evidence" type="radio" value="It's not possible to get it before starting the work" data-aria-controls="conditional-contact">
+              <label class="govuk-label govuk-radios__label" for="no-evidence-1">
+                It's not possible to get it before starting the work
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="no-evidence-1-details">
+                  Give more details
+                </label>
+                 <textarea class="govuk-textarea" id="no-evidence-1-details" name="noEvidenceDetails" spellcheck="false"></textarea>
+              </div>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="no-evidence-2" name="no-evidence" type="radio" value="Advice is being given over the phone before the case is signed" data-aria-controls="conditional-contact-2">
+              <label class="govuk-label govuk-radios__label" for="no-evidence-2">
+                 Advice is being given over the phone before the case is signed
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="no-evidence-2-details">
+                  Give more details
+                </label>
+                 <textarea class="govuk-textarea" id="no-evidence-2-details" name="noEvidenceDetails" spellcheck="false"></textarea>
+              </div>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="no-evidence-3" name="no-evidence" type="radio" value="The personal circumstances of the client make it not possible to get evidence at any point in the case" data-aria-controls="conditional-contact-3">
+              <label class="govuk-label govuk-radios__label" for="no-evidence-3">
+                The personal circumstances of the client make it not possible to get evidence at any point in the case
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-3">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="no-evidence-3-details">
+                  Give more details
+                </label>
+                 <textarea class="govuk-textarea" id="no-evidence-3-details" name="noEvidenceDetails" spellcheck="false"></textarea>
+              </div>
+            </div>
+          </div>
+      </div>
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

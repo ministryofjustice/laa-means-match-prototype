@@ -1,0 +1,543 @@
+{% extends "govuk-prototype-kit/layouts/unbranded.html" %}
+
+{% block pageTitle %}
+  Unbranded page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <p class="govuk-body govuk-!-font-size-16">Client: <strong style="padding-right:10px">Joe Bloggs</strong> Client's legal aid number: <strong style="padding-right:10px">LA-100054</strong> Reference number: <strong style="padding-right:10px">CW-101122</strong></p>
+
+  <img class="govuk-!-margin-top-8" src="/public/images/laa-logo.svg" width="30%"  alt="Legal Aid Agency logo">
+
+  <h1 class="govuk-heading-xl govuk-!-margin-top-2">
+    Record civil controlled work
+  </h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+
+      <!-- CLIENT AND CASE DETAILS -->
+      <h2 class="govuk-heading-l govuk-!-margin-top-5">
+        Client and case details
+      </h2>
+      
+        <dl class="govuk-summary-list app-summary-list--wide-keys">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">ECF</dt>
+          <dd class="govuk-summary-list__value app-summary-list__value--right">No</dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Accessed legal aid before</dt>
+          <dd class="govuk-summary-list__value app-summary-list__value--right">No</dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Full name</dt>
+          <dd class="govuk-summary-list__value app-summary-list__value--right">
+            {{ data['name'] or "Joe Bloggs" }}
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Has name changed?</dt>
+          <dd class="govuk-summary-list__value app-summary-list__value--right">
+            {{ data['name-change'] or "No" }}
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Date of birth</dt>
+          <dd class="govuk-summary-list__value app-summary-list__value--right">
+            {{ data['dob-day'] or "10" }} {{ data['dob-month'] or "Oct" }} {{ data['dob-year'] or "1982" }}
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Place of birth</dt>
+          <dd class="govuk-summary-list__value app-summary-list__value--right">
+            {{ data['place-of-birth'] or "London" }}
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">National Insurance number</dt>
+          <dd class="govuk-summary-list__value app-summary-list__value--right">
+            {{ data['nino-number'] or "QQ123456C" }}
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Address</dt>
+          <dd class="govuk-summary-list__value app-summary-list__value--right">
+            {{ data['address-line-1'] or "12 Elm Grove" }}<br>
+            {{ data['address-line-2'] or "Whitchurch" }}<br>
+            {{ data['town'] or "Bristol" }}<br>
+            {{ data['postcode'] or "BS14 9AA" }}
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Means assessment needed</dt>
+          <dd class="govuk-summary-list__value app-summary-list__value--right app-summary-list__value--right">
+            Yes
+          </dd>
+        </div>
+      </dl>
+
+
+      <!-- MEANS ASSESSMENT -->
+      <h2 class="govuk-heading-l govuk-!-margin-top-8">
+        Means assessment
+      </h2>
+
+      <p class="govuk-body govuk-!-font-weight-bold">Your client qualifies for civil legal aid, for controlled work and family mediation</p>
+
+      <p class="govuk-body govuk-!-font-size-16">Your client qualifies financially for civil legal aid based on the information you entered. Before
+          you (or a provider of advice or services funded by legal aid) proceed with your client’s case, it
+          must also be within scope for legal aid and satisfy the relevant merits criteria set out in the
+          relevant legislation and guidance.
+          These calculations were made in line with the latest version ofthe Lord Chancellor's Guidance
+          on Determining Financial Eligibility for Controlled Work.</p>
+
+      <h2 class="govuk-heading-m">Your client's key eligibility totals</h2>
+        <div class="summary-box-holder govuk-!-margin-bottom-5">
+          <div class="summary-box summary-box-print">
+            <p class="govuk-body summary-list-subheader govuk-!-margin-bottom-0">Gross monthly income</p>
+            <h3 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-margin-top-0">£17.32</h3>
+            <p class="govuk-body govuk-!-margin-top-3">Below upper limit (£2,657).</p>
+          </div>
+          <div class="summary-box summary-box-print">
+            <p class="govuk-body summary-list-subheader govuk-!-margin-bottom-0">Disposable monthly income</p>
+            <h3 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-margin-top-0">-£297.55</h3>
+            <p class="govuk-body govuk-!-margin-top-3">Below upper limit (£733).</p>
+          </div>
+          <div class="summary-box summary-box-print">
+            <p class="govuk-body summary-list-subheader govuk-!-margin-bottom-0">Disposable capital</p>
+            <h3 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-margin-top-0">£0.00</h3>
+            <p class="govuk-body govuk-!-margin-top-3">Below upper limit (£3,000).</p>
+          </div>
+        </div>
+
+
+      <!-- Client details -->
+
+      <h2 class="govuk-heading-m">
+        Client and dependants
+      </h2>
+
+      <dl class="govuk-summary-list app-summary-list--wide-keys">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Does your client have a partner?
+          </dt>
+          <dd class="govuk-summary-list__value app-summary-list__value--right">
+            No
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Does your client receive a passporting benefit?
+          </dt>
+          <dd class="govuk-summary-list__value app-summary-list__value--right">
+            No
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Does your client have any child dependants?
+          </dt>
+          <dd class="govuk-summary-list__value app-summary-list__value--right">
+            No
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Does your client have any adult dependants?
+          </dt>
+          <dd class="govuk-summary-list__value app-summary-list__value--right">
+            No
+          </dd>
+        </div>
+
+      </dl>
+
+
+      <h2 class="govuk-heading-m govuk-!-margin-top-9">
+        Client income
+      </h2>
+
+      <!-- Employment status -->
+      <dl class="govuk-summary-list app-summary-list--wide-keys">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            What is your client's employment status?
+          </dt>
+          <dd class="govuk-summary-list__value app-summary-list__value--right">
+            Employed or self-employed
+          </dd>
+        </div>
+      </dl>
+
+      <!-- Employment income -->
+      <h3 class="govuk-heading-s govuk-!-margin-top-5">
+        Employment income
+      </h3>
+
+      <dl class="govuk-summary-list app-summary-list--wide-keys">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Type of employment income
+          </dt>
+          <dd class="govuk-summary-list__value app-summary-list__value--right">
+            A salary or wage
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Payment frequency
+          </dt>
+          <dd class="govuk-summary-list__value app-summary-list__value--right">
+            Monthly
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Income before any deductions
+          </dt>
+          <dd class="govuk-summary-list__value app-summary-list__value--right">
+            £1,000.00
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Income tax
+          </dt>
+          <dd class="govuk-summary-list__value app-summary-list__value--right">
+            £200.00
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            National Insurance
+          </dt>
+          <dd class="govuk-summary-list__value app-summary-list__value--right">
+            £150.00
+          </dd>
+        </div>
+      </dl>
+
+      <!-- Benefits -->
+      <h3 class="govuk-heading-s govuk-!-margin-top-5">
+        Benefits
+      </h3>
+
+      <dl class="govuk-summary-list app-summary-list--wide-keys">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Does your client get any non-passporting benefits?
+          </dt>
+          <dd class="govuk-summary-list__value app-summary-list__value--right">
+            No
+          </dd>
+        </div>
+      </dl>
+
+      <!-- Other income -->
+      <h3 class="govuk-heading-s govuk-!-margin-top-5">
+        Other income
+      </h3>
+
+      <dl class="govuk-summary-list app-summary-list--wide-keys">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Financial help from friends or family
+          </dt>
+          <dd class="govuk-summary-list__value app-summary-list__value--right">
+            Yes<br>
+            £90.00 Every week
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Maintenance from a former partner
+          </dt>
+          <dd class="govuk-summary-list__value app-summary-list__value--right">
+            No
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Income from property or lodger
+          </dt>
+          <dd class="govuk-summary-list__value app-summary-list__value--right">
+            No
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Income from pensions
+          </dt>
+          <dd class="govuk-summary-list__value app-summary-list__value--right">
+            No
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Income from student finance
+          </dt>
+          <dd class="govuk-summary-list__value app-summary-list__value--right">
+            No
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Income from other sources
+          </dt>
+          <dd class="govuk-summary-list__value app-summary-list__value--right">
+            No
+          </dd>
+        </div>
+      </dl>
+
+
+      <!-- Outgoings -->
+
+      <h2 class="govuk-heading-m govuk-!-margin-top-9">
+        Outgoings
+      </h2>
+
+      <h3 class="govuk-heading-s govuk-!-margin-top-5">
+        Client outgoings and deductions
+      </h3>
+
+      <dl class="govuk-summary-list app-summary-list--wide-keys">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Does your client pay maintenance to a former partner?
+          </dt>
+          <dd class="govuk-summary-list__value app-summary-list__value--right">
+            No
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Does your client make payments toward legal aid for a criminal case?
+          </dt>
+          <dd class="govuk-summary-list__value app-summary-list__value--right">
+            No
+          </dd>
+        </div>
+      </dl>
+
+      <!-- Housing and property -->
+
+      <h2 class="govuk-heading-m govuk-!-margin-top-9">
+        Housing and property
+      </h2>
+
+      <h3 class="govuk-heading-s govuk-!-margin-top-5">
+        Home client usually lives in
+      </h3>
+
+      <dl class="govuk-summary-list app-summary-list--wide-keys">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Does your client own the home the client usually lives in?
+          </dt>
+          <dd class="govuk-summary-list__value app-summary-list__value--right">
+            Yes, with a mortgage or loan
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            What are the mortgage or loan payments for the home the client usually lives in?
+          </dt>
+          <dd class="govuk-summary-list__value app-summary-list__value--right">
+            £600.00 Monthly
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Estimated value of the home client lives in
+          </dt>
+          <dd class="govuk-summary-list__value app-summary-list__value--right">
+            £200,000.00
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Outstanding mortgage
+          </dt>
+          <dd class="govuk-summary-list__value app-summary-list__value--right">
+            £150,000.00
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Percentage share owned
+          </dt>
+          <dd class="govuk-summary-list__value app-summary-list__value--right">
+            25%
+          </dd>
+        </div>
+      </dl>
+
+      <h3 class="govuk-heading-s govuk-!-margin-top-5">
+        Other property
+      </h3>
+
+      <dl class="govuk-summary-list app-summary-list--wide-keys">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Does your client own any other property, a holiday home or land?
+          </dt>
+          <dd class="govuk-summary-list__value app-summary-list__value--right">
+            No
+          </dd>
+        </div>
+      </dl>
+
+      <!-- Assets -->
+
+      <h2 class="govuk-heading-m govuk-!-margin-top-9">
+        Assets
+      </h2>
+
+      <h3 class="govuk-heading-s govuk-!-margin-top-5">
+        Client assets
+      </h3>
+
+      <dl class="govuk-summary-list app-summary-list--wide-keys">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Money in bank account 1
+          </dt>
+          <dd class="govuk-summary-list__value app-summary-list__value--right">
+            £500.00
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Does your client have any investments?
+          </dt>
+          <dd class="govuk-summary-list__value app-summary-list__value--right">
+            No
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Does your client have valuable items worth £500 or more?
+          </dt>
+          <dd class="govuk-summary-list__value app-summary-list__value--right">
+            No
+          </dd>
+        </div>
+      </dl>
+
+      <!-- EVIDENCE -->
+      <h2 class="govuk-heading-l govuk-!-margin-top-8">
+        Evidence
+      </h2>
+
+      <dl class="govuk-summary-list app-summary-list--wide-keys">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Employment (PAYE) income
+          </dt>
+          <dd class="govuk-summary-list__value app-summary-list__value--right">
+            {{ data['employment-income'] or "Wage slips" }}
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Other income
+          </dt>
+          <dd class="govuk-summary-list__value app-summary-list__value--right">
+            {{ data['housing'] or "Bank statement" }}
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Housing costs
+          </dt>
+          <dd class="govuk-summary-list__value app-summary-list__value--right">
+            {{ data['other-income'] or "No evidence required" }}
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Capital
+          </dt>
+          <dd class="govuk-summary-list__value app-summary-list__value--right">
+            {{ data['capital'] or "No evidence required" }}
+          </dd>
+        </div>
+      </dl>
+
+
+      <!-- CLIENT DECLARATION -->
+      <h2 class="govuk-heading-l govuk-!-margin-top-8">
+        Client declaration
+      </h2>
+
+      <h2 class="govuk-heading-m">
+        Confirm the following
+      </h2>
+
+      <p>Joe Bloggs agrees that:</p>
+
+      <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+        <li>they’ve instructed me, the provider, to act on their behalf</li>
+        <li>they’ve read the <a class="govuk-link" href="#">LAA privacy policy (opens in a new window or tab)</a></li>
+        <li>the information they’ve given is complete and correct</li>
+        <li>they’ll report any changes to their financial situation immediately
+        </ul>
+
+      <div class="govuk-warning-text govuk-!-margin-bottom-2">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-visually-hidden">Warning</span>
+          <p class="govuk-!-font-weight-bold govuk-!-margin-bottom-1">If they give wrong or incomplete information, do not report changes or are found to have committed benefit fraud, they may:</p>
+          <ul class="govuk-list govuk-list--bullet govuk-!-font-weight-bold">
+            <li>be prosecuted</li>
+            <li>need to pay a financial penalty</li>
+            <li>have their legal aid stopped and have to pay back the costs</li>
+          </ul>
+        </strong>
+      </div>
+
+      <!-- Signature -->
+      <p class="govuk-body govuk-!-font-weight-bold">Client signature:</p>
+      <p class="govuk-body govuk-!-font-weight-bold">Date:</p>
+
+      
+
+
+
+
+{% endblock %}

@@ -1,0 +1,258 @@
+{% extends "layouts/main-v2.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">Evidence</span>
+      <h1 class="govuk-heading-l">Evidence of your client’s income</h1>
+
+      <p class="govuk-hint">You can use the same piece of evidence across different categories. Select all that apply.</p>
+      
+      <form method="post">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="employed-income-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h2 class="govuk-fieldset__heading">
+              Employed (PAYE) income
+            </h2>
+          </legend>
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="employed-income-1" name="employed-income" type="checkbox" value="Wage slips">
+              <label class="govuk-label govuk-checkboxes__label" for="employed-income-1">
+                Wage slips
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="self-employed-income-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h2 class="govuk-fieldset__heading">
+              Self-employed income
+            </h2>
+          </legend>
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="self-employed-income-1" name="self-employed-income" type="checkbox" value="Bank statement">
+              <label class="govuk-label govuk-checkboxes__label" for="self-employed-income-1">
+                Bank statement
+              </label>
+            </div>
+          </div>
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="self-employed-income-2" name="self-employed-income" type="checkbox" value="Complete financial accounts">
+              <label class="govuk-label govuk-checkboxes__label" for="self-employed-income-2">
+                Complete financial accounts
+              </label>
+            </div>
+          </div>
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="self-employed-income-3" name="self-employed-income" type="checkbox" value="Self Assessment tax return">
+              <label class="govuk-label govuk-checkboxes__label" for="self-employed-income-3">
+                Self Assessment tax return
+              </label>
+            </div>
+          </div>
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="self-employed-income-4" name="self-employed-income" type="checkbox" value="Cash book">
+              <label class="govuk-label govuk-checkboxes__label" for="self-employed-income-4">
+                Cash book
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="bik-income-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h2 class="govuk-fieldset__heading">
+              Benefits in Kind
+            </h2>
+          </legend>
+          <div id="waste-hint" class="govuk-hint">
+            Select all that apply
+          </div>
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="bik-income-1" name="bik-income" type="checkbox" value="P11D tax form">
+              <label class="govuk-label govuk-checkboxes__label" for="bik-income-1">
+                P11D tax form
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="other-income-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h2 class="govuk-fieldset__heading">
+              Other income
+            </h2>
+          </legend>
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="other-income-1" name="other-income" type="checkbox" value="Evidence of rental income">
+              <label class="govuk-label govuk-checkboxes__label" for="other-income-1">
+                Evidence of rental income
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="other-income-2" name="other-income" type="checkbox" value="Evidence of trust income">
+              <label class="govuk-label govuk-checkboxes__label" for="other-income-2">
+                Evidence of trust income
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="other-income-3" name="other-income" type="checkbox" value="Letter from friend or family providing support">
+              <label class="govuk-label govuk-checkboxes__label" for="other-income-3">
+                Letter from friend or family providing support
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="other-income-4" name="other-income" type="checkbox" value="Pension documents">
+              <label class="govuk-label govuk-checkboxes__label" for="other-income-4">
+                Pension documents
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="other-income-5" name="other-income" type="checkbox" value="Student loan letter">
+              <label class="govuk-label govuk-checkboxes__label" for="other-income-5">
+                Student loan letter
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="other-income-6" name="other-income" type="checkbox" data-aria-controls="conditional-other-income-4" value="Other">
+              <label class="govuk-label govuk-checkboxes__label" for="other-income-6">
+                Other
+              </label>
+            </div>
+            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-other-income-4">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="other-more-details">
+                  Give details
+                </label>
+                <textarea class="govuk-textarea" id="other-more-details" name="other-more-details"></textarea>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="benefits-income-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h2 class="govuk-fieldset__heading">
+              State benefits (including passporting benefits)
+            </h2>
+          </legend>
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="benefits-income-1" name="benefits-income" type="checkbox" value="Bank statements">
+              <label class="govuk-label govuk-checkboxes__label" for="benefits-income-1">
+                Bank statements
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="benefits-income-2" name="benefits-income" type="checkbox" value="Latest letter showing change in benefit amount">
+              <label class="govuk-label govuk-checkboxes__label" for="benefits-income-2">
+                Latest letter showing change in benefit amount
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="benefits-income-3" name="benefits-income" type="checkbox" value="Letter from the paying agency that shows the client was receiving the passporting benefit at the time of recording this case">
+              <label class="govuk-label govuk-checkboxes__label" for="benefits-income-3">
+                Letter from the paying agency that shows the client is receiving the passporting benefit
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="benefits-income-4" name="benefits-income" type="checkbox" value="Original notification letter">
+              <label class="govuk-label govuk-checkboxes__label" for="benefits-income-4">
+                Original notification letter
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="benefits-income-5" name="benefits-income" type="checkbox" value="Student loan letter">
+              <label class="govuk-label govuk-checkboxes__label" for="benefits-income-5">
+                Student loan letter
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="asylum-income-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h2 class="govuk-fieldset__heading">
+              Asylum support
+            </h2>
+          </legend>
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="asylum-income-1" name="asylum-income" type="checkbox" value="Letter from asylum support or the local authority that shows the client is receiving support">
+              <label class="govuk-label govuk-checkboxes__label" for="asylum-income-1">
+                Letter from asylum support or the local authority that shows the client is receiving support
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="tax-credit-income-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h2 class="govuk-fieldset__heading">
+              Tax credits
+            </h2>
+          </legend>
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="tax-credit-income-1" name="tax-credit-income" type="checkbox" value="Latest tax credit award notice">
+              <label class="govuk-label govuk-checkboxes__label" for="tax-credit-income-1">
+                Latest tax credit award notice
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="tax-credit-income-2" name="tax-credit-income" type="checkbox" value="Other recent HMRC letter confirming the amount received">
+              <label class="govuk-label govuk-checkboxes__label" for="tax-credit-income-2">
+                Other recent HMRC letter confirming the amount received
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

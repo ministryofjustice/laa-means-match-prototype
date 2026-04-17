@@ -1,0 +1,78 @@
+{% extends "layouts/main-v2-cases.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full width">
+
+      <h1 class="govuk-heading-l">
+        Your cases
+      </h1>
+
+      {{ govukButton({
+        text: "Record a new case",
+        href: "ecf"
+      }) }}
+
+      <nav class="moj-sub-navigation" aria-label="Sub navigation">
+        <ul class="moj-sub-navigation__list">
+          <li class="moj-sub-navigation__item">
+            <a class="moj-sub-navigation__link" aria-current="page" href="#">In progress</a>
+          </li>
+          <li class="moj-sub-navigation__item">
+            <a class="moj-sub-navigation__link" href="case-list-recorded">Recorded</a>
+          </li>
+        </ul>
+      </nav> 
+
+      <table class="govuk-table" data-module="moj-sortable-table">
+
+        <!-- <caption class="govuk-table__caption">Client Records</caption> -->
+
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header" aria-sort="none">Client name</th>
+            <th scope="col" class="govuk-table__header" aria-sort="none">Reference number</th>
+            <th scope="col" class="govuk-table__header" aria-sort="descending">Last updated</th>
+          </tr>
+        </thead>
+
+        <tbody class="govuk-table__body">
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="task-list-means-complete">Joe Bloggs</a></td>
+            <td class="govuk-table__cell">CW-101122</td>
+            <td class="govuk-table__cell" data-sort-value="2025.12.09">9 Dec 2025</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="#">Sofia Martinez</a></td>
+            <td class="govuk-table__cell">CW-103214</td>
+            <td class="govuk-table__cell" data-sort-value="2025.12.20">20 Dec 2025</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="#">Daniel O'Connor</a></td>
+            <td class="govuk-table__cell">CW-104089</td>
+            <td class="govuk-table__cell" data-sort-value="2025.11.22">22 Nov 2025</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="#">Aisha Rahman</a></td>
+            <td class="govuk-table__cell">CW-102956</td>
+            <td class="govuk-table__cell" data-sort-value="2025.12.04">4 Dec 2025</td>
+          </tr>
+
+        </tbody>
+      </table>
+
+
+    </div>
+  </div>
+
+{% endblock %}

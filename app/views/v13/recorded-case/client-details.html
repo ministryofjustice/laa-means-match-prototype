@@ -1,0 +1,195 @@
+{% extends "layouts/main-v2.html" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "../case-list-recorded"
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+
+<!--- CASE HEADER -->
+
+  <div class="govuk-form-group">
+    <strong class="govuk-tag govuk-tag--purple govuk-!-margin-bottom-3">Recorded</strong>
+    <h1 class="govuk-heading-xl">{{ data['name'] or "Keisha Brown" }}</h1>
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Client's legal aid number:<span class="govuk-body-l"> LA-100194</span></h2>
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Reference number:<span class="govuk-body-l"> CW-103041</span></h2>
+    <h2 class="govuk-heading-m">Recorded on:<span class="govuk-body-l"> 15 Jan 2026</span></h2>
+
+    <div class="govuk-button-group">
+      <a href="#" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button" data-govuk-button-init="">
+        Download as a PDF
+      </a>
+      <!-- <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button" data-govuk-button-init="">
+        Generate legal help form
+      </button> -->
+    </div>
+  </div>
+
+<!-- SUB-NAV -->
+
+{%- from "moj/components/sub-navigation/macro.njk" import mojSubNavigation -%}
+
+  <nav class="moj-sub-navigation" aria-label="Sub navigation">
+
+    <ul class="moj-sub-navigation__list">
+      <li class="moj-sub-navigation__item">
+        <a class="moj-sub-navigation__link" aria-current="page" href="./client-details">Client and case details</a>
+      </li>
+
+      <li class="moj-sub-navigation__item">
+        <a class="moj-sub-navigation__link" href="./means">Means assessment</a>
+      </li>
+
+      <li class="moj-sub-navigation__item">
+        <a class="moj-sub-navigation__link" href="./evidence">Evidence and declaration</a>
+      </li>
+    </ul>
+
+  </nav>
+
+
+<!-- CONTENT -->
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-5">Client and case details</h2>
+
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper">
+          <h2 class="govuk-summary-card__title">
+            About the client
+          </h2>
+        </div>
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list">
+            
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Full name
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['name'] or "Keisha Brown" }}
+              </dd>
+              <!-- <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="./client-details">Change<span class="govuk-visually-hidden"> name</span></a>
+              </dd> -->
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Name change
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['name-change'] or "No" }}
+              </dd>
+              <!-- <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="./client-details">Change<span class="govuk-visually-hidden"> whether name has changed</span></a>
+              </dd> -->
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Date of birth
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['dob-day'] or "3" }} {{ data['dob-month'] or "May" }} {{ data['dob-year'] or "1991" }}
+              </dd>
+              <!-- <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="./client-details">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+              </dd> -->
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Place of birth
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['place-of-birth'] or "London" }}
+              </dd>
+              <!-- <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="./client-details">Change<span class="govuk-visually-hidden"> place of birth</span></a>
+              </dd> -->
+            </div>
+            
+            <!-- Still need to make work for no nino -->
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                National Insurance number
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['nino-number'] or "AP787938D" }}
+              </dd>
+              <!-- <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="./nino">Change<span class="govuk-visually-hidden"> National Insurance number</span></a>
+              </dd> -->
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['address-line-1'] or "135 Junction Rd" }}<br>
+                {{ data['address-line-2'] or "Archway" }}<br>
+                {{ data['town'] or "London" }}<br>
+                {{ data['postcode'] or "N19 5PX" }}
+              </dd>
+              <!-- <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="./client-find-address">Change<span class="govuk-visually-hidden"> address</span></a>
+              </dd> -->
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Accessed legal aid before
+              </dt>
+              <dd class="govuk-summary-list__value">
+                No
+              </dd>
+              <!-- <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="./legal-aid-before">Change<span class="govuk-visually-hidden"> legal aid before</span></a>
+              </dd> -->
+            </div>  
+          </dl>
+        </div>
+      </div>
+
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper">
+          <h2 class="govuk-summary-card__title">
+          Case details
+          </h2>
+        </div>
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                ECF
+              </dt>
+              <dd class="govuk-summary-list__value">
+                No
+              </dd>
+              <!-- <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="./ecf">Change<span class="govuk-visually-hidden"> ecf</span></a>
+              </dd> -->
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Means assessment needed
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Yes
+              </dd>
+              <!-- <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="./means-required">Change<span class="govuk-visually-hidden"> address</span></a>
+              </dd> -->
+            </div>
+          </dl>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+{% endblock %}
