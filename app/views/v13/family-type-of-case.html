@@ -1,0 +1,56 @@
+{% extends "layouts/main-v2.html" %}
+
+{% block pageTitle %}
+  What type of family law is it? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <form method="post" action="family-type-of-case-answer">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <span class="govuk-caption-l">Client and case details</span>
+              <h1 class="govuk-fieldset__heading">
+                 What type of family law is it?
+              </h1>
+            </legend>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="family-law-type-1" name="family-law-type" type="radio" value="Private">
+                <label class="govuk-label govuk-radios__label" for="family-law-type-1">
+                  Private
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="family-law-type-2" name="family-law-type" type="radio" value="Public">
+                <label class="govuk-label govuk-radios__label" for="family-law-type-2">
+                  Public
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

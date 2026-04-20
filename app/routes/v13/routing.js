@@ -3,13 +3,26 @@ var version = '/v13/'
 module.exports = function (router) {
 
 
-// Which type of case question
-router.post(version + 'case-type-answer', function (req, res) {
-  if (req.session.data['case-type'] == "Civil certificated or licensed legal work")
+// // Which type of case question
+// router.post(version + 'case-type-answer', function (req, res) {
+//   if (req.session.data['case-type'] == "Civil certificated or licensed legal work")
+//     {
+//       res.redirect(version + 'which-type-of-case')
+//     } else {
+//       res.redirect(version + 'start-page')
+//     }
+// })
+
+// Family legal service question
+router.post(version + 'family-legal-service-answer', function (req, res) {
+  if (req.session.data['legal-service'] == "Help with family mediation")
     {
-      res.redirect(version + 'which-type-of-case')
-    } else {
-      res.redirect(version + 'start-page')
+      res.redirect(version + 'family-legal-service')
+      // refresh
+    } 
+    else
+    {
+      res.redirect(version + 'family-type-of-case')
     }
 })
 
