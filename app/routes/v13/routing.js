@@ -72,6 +72,27 @@ router.post(version + 'family-private-evidence-answer', function (req, res) {
 	}
 })
 
+// Public family written notice question
+router.post(version + 'family-public-written-notice-answer', function (req, res) {
+	if (req.session.data['written-notice'] == "No"){
+		res.redirect(version + 'private-family-dropout')
+	} else {
+    res.redirect(version + 'family-public-parental')
+	}
+})
+
+// Public family parental responsibility question
+router.post(version + 'family-public-parental-answer', function (req, res) {
+	
+  req.session.data['cw1pl'] = "True"
+  
+  if (req.session.data['parental'] == "No"){
+		res.redirect(version + 'private-family-dropout')
+	} else {
+    res.redirect(version + 'legal-aid-before')
+	}
+})
+
 // Exceptional Case Funding (ECF) question
 router.post(version + 'ecf-answer', function (req, res) {
   if (req.session.data['ecf'] == "Yes")
@@ -106,6 +127,15 @@ router.post(version + 'does-client-have-address-answer', function (req, res) {
     } else {
       res.redirect(version + 'client-find-address')
     }
+})
+
+// Client choose address question
+router.post(version + 'client-choose-address-answer', function (req, res) {
+  if (req.session.data['cw1pl'] == "True") {
+    res.redirect(version + 'check-answers-client-details-cw1pl')
+  } else {
+    res.redirect(version + 'means-required')
+  }
 })
 
 // Means assessment required question
