@@ -26,6 +26,52 @@ router.post(version + 'family-legal-service-answer', function (req, res) {
     }
 })
 
+// Family type of case question
+router.post(version + 'family-type-of-case-answer', function (req, res) {
+  if (req.session.data['family-law-type'] == "Private" && req.session.data['legal-service'] == "Family help (lower)")
+    {
+      res.redirect(version + 'family-help-lower-merits')
+    } 
+    else if (req.session.data['family-law-type'] == "Private" && req.session.data['legal-service'] == "Legal help")
+    {
+      res.redirect(version + 'family-private-evidence')
+    }
+    else if (req.session.data['family-law-type'] == "Public" && req.session.data['legal-service'] == "Family help (lower)")
+    {
+      res.redirect(version + 'family-public-written-notice')
+    }
+    else
+    {
+      res.redirect(version + 'ecf')
+    }
+})
+
+// Family help (lower) merits question
+router.post(version + 'family-help-lower-merits-answer', function (req, res) {
+  if (req.session.data['merits'] == "No")
+    {
+      res.redirect(version + 'private-family-dropout')
+    } 
+    else if (req.session.data['family-spec'] == "No")
+    {
+      res.redirect(version + 'private-family-dropout')
+    }
+    else
+    {
+      res.redirect(version + 'family-private-evidence')
+    }
+})
+
+// Private family evidence question
+router.post(version + 'family-private-evidence-answer', function (req, res) {
+  var scopingEvidence = req.session.data['scoping-evidence']
+	if (scopingEvidence.includes("None of these")){
+		res.redirect(version + 'private-family-evidence-dropout')
+	} else {
+    res.redirect(version + 'ecf')
+	}
+})
+
 // Exceptional Case Funding (ECF) question
 router.post(version + 'ecf-answer', function (req, res) {
   if (req.session.data['ecf'] == "Yes")

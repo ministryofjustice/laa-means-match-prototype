@@ -23,6 +23,39 @@
       <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
+            Form of legal service
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['legal-service'] or "Legal help" }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="./family-legal-service">Change<span class="govuk-visually-hidden"> form of family legal service</span></a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Type of family law
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['family-law-type'] or "Private" }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="./family-type-of-case">Change<span class="govuk-visually-hidden"> type of family law</span></a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Evidence case is in scope
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['scoping-evidence'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="./family-private-evidence">Change<span class="govuk-visually-hidden"> evidence case is in scope</span></a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
             ECF
           </dt>
           <dd class="govuk-summary-list__value">
