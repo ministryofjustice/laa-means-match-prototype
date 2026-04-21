@@ -5,7 +5,7 @@ metadata:
   labels:
     app: laa-means-match-prototype
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: laa-means-match-prototype # this should match the selector in service.yml
