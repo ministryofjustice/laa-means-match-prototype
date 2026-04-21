@@ -32,6 +32,7 @@
             <a class="govuk-link" href="./family-legal-service">Change<span class="govuk-visually-hidden"> form of family legal service</span></a>
           </dd>
         </div>
+        
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Type of family law
@@ -43,6 +44,7 @@
             <a class="govuk-link" href="./family-type-of-case">Change<span class="govuk-visually-hidden"> type of family law</span></a>
           </dd>
         </div>
+
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Evidence case is in scope
@@ -54,6 +56,7 @@
             <a class="govuk-link" href="./family-private-evidence">Change<span class="govuk-visually-hidden"> evidence case is in scope</span></a>
           </dd>
         </div>
+
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             ECF
@@ -65,6 +68,7 @@
             <a class="govuk-link" href="./ecf">Change<span class="govuk-visually-hidden"> ecf</span></a>
           </dd>
         </div>
+
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Accessed legal aid before
@@ -76,6 +80,7 @@
             <a class="govuk-link" href="./legal-aid-before">Change<span class="govuk-visually-hidden"> legal aid before</span></a>
           </dd>
         </div>
+
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Full name
@@ -87,6 +92,7 @@
             <a class="govuk-link" href="./client-details">Change<span class="govuk-visually-hidden"> name</span></a>
           </dd>
         </div>
+
         <!-- <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Has name changed?
@@ -125,6 +131,18 @@
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
+            Has address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['has-address'] or "Yes" }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="./nino">Change<span class="govuk-visually-hidden"> whether client has address</span></a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
             Address
           </dt>
           <dd class="govuk-summary-list__value">
@@ -137,6 +155,7 @@
             <a class="govuk-link" href="./client-find-address">Change<span class="govuk-visually-hidden"> address</span></a>
           </dd>
         </div>
+
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Means assessment needed
@@ -148,28 +167,7 @@
             <a class="govuk-link" href="./means-required">Change<span class="govuk-visually-hidden"> address</span></a>
           </dd>
         </div>
-        <!-- <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            What's the matter about?
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['matter-type'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="./matter-type">Change<span class="govuk-visually-hidden"> what the matter is about</span></a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Who's involved?
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['matter-who'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="./matter-type-2">Change<span class="govuk-visually-hidden"> who is involved</span></a>
-          </dd>
-        </div> -->
+
       </dl>
 
 

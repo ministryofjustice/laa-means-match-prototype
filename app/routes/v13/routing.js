@@ -121,10 +121,15 @@ router.post(version + 'legal-aid-before-answer', function (req, res) {
 
 // Does client have home address question
 router.post(version + 'does-client-have-address-answer', function (req, res) {
-  if (req.session.data['have-address'] == "No, they have no fixed address")
+    if (req.session.data['cw1pl'] == "True" && req.session.data['have-address'] == "No, they have no fixed address")
+    {
+      res.redirect(version + 'check-answers-client-details-cw1pl')
+    }
+    else if (req.session.data['have-address'] == "No, they have no fixed address")
     {
       res.redirect(version + 'means-required')
-    } else {
+    } 
+    else {
       res.redirect(version + 'client-find-address')
     }
 })
