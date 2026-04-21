@@ -45,26 +45,58 @@
 
       <h2 class="govuk-heading-m govuk-!-margin-top-5">Declarations</h2>
 
-      {{ govukTaskList({
-        idPrefix: "third-section",
-        items: [
-          {
-            title: {
-              text: "Client declaration"
-            },
-            href: "client-declaration",
-            status: incompleteStatus
-          }
-        ]
-      }) }}
+      {% if (data['declarationComplete'] == "True") %}
 
-      <div class="govuk-!-margin-top-5">
+        {{ govukTaskList({
+          idPrefix: "third-section",
+          items: [
+            {
+              title: {
+                text: "Client declaration"
+              },
+              href: "client-declaration",
+              status: completedStatus
+            }
+          ]
+        }) }}
+
+        <div class="govuk-button-group govuk-!-margin-top-8">
+        {{ govukButton({
+          text: "Record controlled work",
+          href: "confirmation" 
+        }) }}
+
         {{ govukButton({ 
           text: "Save and return later",
           classes: "govuk-button--secondary", 
           href: "case-list" 
         }) }}
       </div>
+      
+      {% else %}
+
+        {{ govukTaskList({
+          idPrefix: "third-section",
+          items: [
+            {
+              title: {
+                text: "Client declaration"
+              },
+              href: "client-declaration",
+              status: incompleteStatus
+            }
+          ]
+        }) }}
+
+        <div class="govuk-!-margin-top-5">
+          {{ govukButton({ 
+            text: "Save and return later",
+            classes: "govuk-button--secondary", 
+            href: "case-list" 
+          }) }}
+        </div>
+
+      {% endif %}
 
       <!-- <a  href="task-list-means-complete">X</a> -->
 

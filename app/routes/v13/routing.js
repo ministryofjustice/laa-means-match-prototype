@@ -191,9 +191,23 @@ router.post(version + 'check-answers-evidence', function (req, res) {
 
 // Client declaration
 router.post(version + 'client-declaration', function (req, res) {
-    req.session.data['declarationComplete'] = true;
     res.redirect(version + 'task-list-means-complete');
   });
+
+  // Client declaration
+router.post(version + 'client-declaration-application-summary-answer', function (req, res) {
+  req.session.data['declarationComplete'] = "True"
+
+    if (req.session.data['cw1pl'] == "True")
+    {
+      res.redirect(version + 'task-list-cw1pl')
+    }
+    else {
+    res.redirect(version + 'task-list-temp-decDone')
+    }
+  });
+
+  
 
 
 // GET for task list
