@@ -128,6 +128,22 @@
       </h2>
       
         <dl class="govuk-summary-list app-summary-list--wide-keys">
+        
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Form of legal service</dt>
+          <dd class="govuk-summary-list__value app-summary-list__value--right">{{ data['legal-service'] or "Family help (lower)" }}</dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Type of family law</dt>
+          <dd class="govuk-summary-list__value app-summary-list__value--right">{{ data['type-of-family-law'] or "Private" }}</dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Evidence case is in scope</dt>
+          <dd class="govuk-summary-list__value app-summary-list__value--right">{{ data['scoping-evidence'] or "Health professional report or letter" }}</dd>
+        </div>
+
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">ECF</dt>
           <dd class="govuk-summary-list__value app-summary-list__value--right">No</dd>
@@ -203,17 +219,17 @@
         <div class="summary-box-holder govuk-!-margin-bottom-5">
           <div class="summary-box summary-box-print">
             <p class="govuk-body summary-list-subheader govuk-!-margin-bottom-0">Gross monthly income</p>
-            <h3 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-margin-top-0">£17.32</h3>
+            <h3 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-margin-top-0">£2,500</h3>
             <p class="govuk-body govuk-!-margin-top-3">Below upper limit (£2,657).</p>
           </div>
           <div class="summary-box summary-box-print">
             <p class="govuk-body summary-list-subheader govuk-!-margin-bottom-0">Disposable monthly income</p>
-            <h3 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-margin-top-0">-£297.55</h3>
+            <h3 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-margin-top-0">-£466</h3>
             <p class="govuk-body govuk-!-margin-top-3">Below upper limit (£733).</p>
           </div>
           <div class="summary-box summary-box-print">
             <p class="govuk-body summary-list-subheader govuk-!-margin-bottom-0">Disposable capital</p>
-            <h3 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-margin-top-0">£0.00</h3>
+            <h3 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-margin-top-0">£500</h3>
             <p class="govuk-body govuk-!-margin-top-3">Below upper limit (£3,000).</p>
           </div>
         </div>
