@@ -1,0 +1,85 @@
+{% extends "layouts/main-v2.html" %}
+
+{% block pageTitle %}
+  What type of family law is it? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <form method="post" action="family-help-lower-merits-answer">
+
+        <span class="govuk-caption-l">Client and case details</span>
+        <h1 class="govuk-heading-l">
+          Family help (lower) case criteria
+        </h1>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h1 class="govuk-fieldset__heading">
+                 Does the case meet the merits criteria?
+              </h1>
+            </legend>
+            <p class="govuk-body">The relevant criteria in the <a href="#">Civil Legal Aid Regulations 2012</a> for family help (lower) must be met.</p>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="merits-yes" name="merits" type="radio" value="Yes">
+                <label class="govuk-label govuk-radios__label" for="merits-yes">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="merits-no" name="merits" type="radio" value="No">
+                <label class="govuk-label govuk-radios__label" for="merits-no">
+                  No
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h1 class="govuk-fieldset__heading">
+                 Does the case meet the conditions set out in the Family Specification?
+              </h1>
+            </legend>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="family-spec-yes" name="family-spec" type="radio" value="Yes">
+                <label class="govuk-label govuk-radios__label" for="family-spec-yes">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="family-spec-no" name="family-spec" type="radio" value="No">
+                <label class="govuk-label govuk-radios__label" for="family-spec-no">
+                  No
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

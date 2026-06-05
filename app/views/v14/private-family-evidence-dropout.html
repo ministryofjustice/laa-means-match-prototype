@@ -1,0 +1,33 @@
+{% extends "layouts/main-v2.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+       This case is not in scope for legal aid
+      </h1>
+
+      <p>Based on your answers, this case is not in scope for legal aid.</p>
+
+      <p>You must meet the <a href="#">evidence requirements (opens in new window or tab)</a> set out in Schedule 1, regulation 33 and Schedule 2, regulation 34 of the Civil Legal Aid (Procedures) Regulations and guidance for this type of case to be in scope.</p>
+
+
+      <a href="case-list" class="govuk-button">Finish and return to case list</a>
+
+    </div>
+  </div>
+
+{% endblock %}
