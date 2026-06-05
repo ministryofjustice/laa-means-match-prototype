@@ -17,11 +17,21 @@
     <div class="govuk-grid-column-two-thirds">
 
       <span class="govuk-caption-l">Client and case details</span>
-      <h1 class="govuk-heading-l">Enter your client's home address</h1>
+      <h1 class="govuk-heading-l">Enter your client's overseas home address</h1>
 
       <form method="post" action="./means-required">
 
-        <!-- Postcode -->
+        <!-- Country -->
+        <div class="govuk-form-group">
+          <label class="govuk-heading-m" for="country">
+            Country
+          </label>
+          <input class="govuk-input govuk-input--width-20" id="country" name="country" type="text" aria-describedby="country-hint" value="{{ data['country'] }}">
+          <span class="govuk-body" style="margin-left: 15px"><a href="#" class="govuk-link">Clear</a></span>
+        </div>
+
+        <!-- Address -->
+         <h2 class="govuk-heading-m">Address</h2>
         <div class="govuk-form-group">
           <label class="govuk-label" for="address-line-1">
             Address line 1
@@ -35,27 +45,17 @@
           <input class="govuk-input" id="address-line-2" name="address-line-2" type="text" aria-describedby="address-line-2-hint">
         </div>
         <div class="govuk-form-group">
-          <label class="govuk-label" for="town">
-            Town or city
+          <label class="govuk-label" for="address-line-3">
+            Address line 3 (optional)
           </label>
-          <input class="govuk-input" id="town" name="town" type="text" aria-describedby="town-hint">
+          <input class="govuk-input" id="address-line-3" name="address-line-3" type="text" aria-describedby="address-line-3-hint">
         </div>
         <div class="govuk-form-group">
-          <label class="govuk-label" for="country">
-            Country
+          <label class="govuk-label" for="address-line-4">
+            Address line 4 (optional)
           </label>
-          <input class="govuk-input" id="country" name="country" type="text" aria-describedby="country-hint">
+          <input class="govuk-input" id="address-line-4" name="address-line-4" type="text" aria-describedby="address-line-4-hint">
         </div>
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="postcode">
-            Postcode
-          </label>
-          <input class="govuk-input govuk-input--width-10" id="postcode" name="postcode" type="text" aria-describedby="postcode-hint" value="{{ data['postcode'] }}">
-        </div>
-
-        <p class="govuk-body govuk-!-margin-bottom-6">
-          <a class="govuk-link" href="client-find-address-manual-overseas">The address is not in the UK</a>
-        </p>
 
         <button type="submit" class="govuk-button" data-module="govuk-button">
           Continue

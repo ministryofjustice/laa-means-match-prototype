@@ -130,7 +130,7 @@ router.post(version + 'does-client-have-address-answer', function (req, res) {
       res.redirect(version + 'means-required')
     } 
     else {
-      res.redirect(version + 'client-find-address')
+      res.redirect(version + 'client-find-address-manual')
     }
 })
 
