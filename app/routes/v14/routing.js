@@ -13,54 +13,47 @@ module.exports = function (router) {
 //     }
 // })
 
-// Family legal service question
-router.post(version + 'family-legal-service-answer', function (req, res) {
-  if (req.session.data['legal-service'] == "Help with family mediation")
+// // Family legal service question
+// router.post(version + 'family-legal-service-answer', function (req, res) {
+//   if (req.session.data['legal-service'] == "Help with family mediation")
+//     {
+//       res.redirect(version + 'family-legal-service')
+//       // refresh
+//     } 
+//     else
+//     {
+//       res.redirect(version + 'family-type-of-case')
+//     }
+// })
+
+
+// Family type of case question (public or private)
+router.post(version + 'family-type-of-case-answer', function (req, res) {
+  if (req.session.data['family-law-type'] == "Public")
     {
-      res.redirect(version + 'family-legal-service')
-      // refresh
-    } 
+      res.redirect(version + 'family-public-written-notice')
+    }
     else
     {
       res.redirect(version + 'family-type-of-case')
     }
 })
 
-// Family type of case question
-router.post(version + 'family-type-of-case-answer', function (req, res) {
-  if (req.session.data['family-law-type'] == "Private" && req.session.data['legal-service'] == "Family help (lower)")
-    {
-      res.redirect(version + 'family-help-lower-merits')
-    } 
-    else if (req.session.data['family-law-type'] == "Private" && req.session.data['legal-service'] == "Legal help")
-    {
-      res.redirect(version + 'family-private-evidence')
-    }
-    else if (req.session.data['family-law-type'] == "Public" && req.session.data['legal-service'] == "Family help (lower)")
-    {
-      res.redirect(version + 'family-public-written-notice')
-    }
-    else
-    {
-      res.redirect(version + 'ecf')
-    }
-})
-
-// Family help (lower) merits question
-router.post(version + 'family-help-lower-merits-answer', function (req, res) {
-  if (req.session.data['merits'] == "No")
-    {
-      res.redirect(version + 'private-family-dropout')
-    } 
-    else if (req.session.data['family-spec'] == "No")
-    {
-      res.redirect(version + 'private-family-dropout')
-    }
-    else
-    {
-      res.redirect(version + 'family-private-evidence')
-    }
-})
+// // Family help (lower) merits question
+// router.post(version + 'family-help-lower-merits-answer', function (req, res) {
+//   if (req.session.data['merits'] == "No")
+//     {
+//       res.redirect(version + 'private-family-dropout')
+//     } 
+//     else if (req.session.data['family-spec'] == "No")
+//     {
+//       res.redirect(version + 'private-family-dropout')
+//     }
+//     else
+//     {
+//       res.redirect(version + 'family-private-evidence')
+//     }
+// })
 
 // Private family evidence question
 router.post(version + 'family-private-evidence-answer', function (req, res) {
@@ -99,7 +92,7 @@ router.post(version + 'ecf-answer', function (req, res) {
     {
       res.redirect(version + 'ecf-dropout')
     } else {
-      res.redirect(version + 'legal-aid-before')
+      res.redirect(version + 'family-type-of-case')
     }
 })
 

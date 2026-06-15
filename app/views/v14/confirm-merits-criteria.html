@@ -1,0 +1,41 @@
+{% extends "layouts/main-v2.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">Client and case details</span>
+      <h1 class="govuk-heading-l">
+        Confirm the case meets the merits criteria
+      </h1>
+
+      <p>All legal aid cases must meet the relevant merits criteria set out in the <a class="govuk-link" href="https://www.legislation.gov.uk/uksi/2013/104/contents">Civil Legal Aid (Merits Criteria) Regulations (2013)</a>.</p>
+
+      <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="merits" name="merits" type="checkbox" value="Yes">
+          <label class="govuk-label govuk-checkboxes__label" for="merits">
+            I confirm the case meets the criteria
+          </label>
+        </div>
+      </div>
+
+      <a href="legal-aid-before" class="govuk-button">Continue</a>
+      
+
+    </div>
+  </div>
+
+{% endblock %}
