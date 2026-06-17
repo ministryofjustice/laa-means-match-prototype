@@ -35,7 +35,7 @@ router.post(version + 'family-type-of-case-answer', function (req, res) {
     }
     else
     {
-      res.redirect(version + 'family-type-of-case')
+      res.redirect(version + 'family-private-non-means-question')
     }
 })
 
@@ -54,6 +54,24 @@ router.post(version + 'family-type-of-case-answer', function (req, res) {
 //       res.redirect(version + 'family-private-evidence')
 //     }
 // })
+
+// Private family non means question
+router.post(version + 'family-private-non-means-question-answer', function (req, res) {
+	if (req.session.data['family-private-non-means'] == "Yes"){
+		res.redirect(version + 'confirm-merits-criteria')
+	} else {
+    res.redirect(version + 'family-private-domestic-abuse')
+	}
+})
+
+// Private family domestic abuse question
+router.post(version + 'family-private-domestic-abuse-answer', function (req, res) {
+	if (req.session.data['family-private-domestic-abuse'] == "Yes"){
+		res.redirect(version + 'confirm-merits-criteria')
+	} else {
+    res.redirect(version + 'family-private-evidence')
+	}
+})
 
 // Private family evidence question
 router.post(version + 'family-private-evidence-answer', function (req, res) {
