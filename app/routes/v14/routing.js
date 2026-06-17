@@ -79,7 +79,7 @@ router.post(version + 'family-private-evidence-answer', function (req, res) {
 	if (scopingEvidence.includes("None of these")){
 		res.redirect(version + 'private-family-evidence-dropout')
 	} else {
-    res.redirect(version + 'ecf')
+    res.redirect(version + 'confirm-merits-criteria')
 	}
 })
 
