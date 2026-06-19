@@ -86,7 +86,7 @@ router.post(version + 'family-private-evidence-answer', function (req, res) {
 // Public family written notice question
 router.post(version + 'family-public-written-notice-answer', function (req, res) {
 	if (req.session.data['written-notice'] == "No"){
-		res.redirect(version + 'private-family-dropout')
+		res.redirect(version + 'confirm-merits-criteria')
 	} else {
     res.redirect(version + 'family-public-parental')
 	}
@@ -94,13 +94,12 @@ router.post(version + 'family-public-written-notice-answer', function (req, res)
 
 // Public family parental responsibility question
 router.post(version + 'family-public-parental-answer', function (req, res) {
-	
-  req.session.data['cw1pl'] = "True"
   
   if (req.session.data['parental'] == "No"){
-		res.redirect(version + 'private-family-dropout')
+		res.redirect(version + 'confirm-merits-criteria')
 	} else {
     res.redirect(version + 'legal-aid-before')
+    req.session.data['cw1pl'] = "True"
 	}
 })
 
