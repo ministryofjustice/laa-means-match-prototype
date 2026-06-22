@@ -161,8 +161,9 @@
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data['address-line-1'] or "12 Elm Grove" }}<br>
-            {{ data['address-line-2'] or "Whitchurch" }}<br>
-            {{ data['town'] or "Bristol" }}<br>
+            {{ data['address-line-2']}}
+            {{ data['town'] or "Whitchurch" }}<br>
+            {{ data['county'] or "Bristol" }}<br>
             {{ data['postcode'] or "BS14 9AA" }}
           </dd>
           <dd class="govuk-summary-list__actions">
