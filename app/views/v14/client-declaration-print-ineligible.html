@@ -6,7 +6,7 @@
 
 {% block content %}
 
-  <p class="govuk-body govuk-!-font-size-16">Client: <strong style="padding-right:10px">{{ data['name'] or "Jane Smith" }}</strong> Reference number: <strong style="padding-right:10px">{{ data['reference-number'] or "CW-212644" }}</strong></p>
+  <p class="govuk-body govuk-!-font-size-16">Client: <strong style="padding-right:10px">{{ data['first-name'] or "Joe" }} {{ data['last-name'] or "Bloggs" }}</strong> Reference number: <strong style="padding-right:10px">{{ data['reference-number'] or "CW-212644" }}</strong></p>
 
   <img class="govuk-!-margin-top-8" src="/public/images/laa-logo.svg" width="30%"  alt="Legal Aid Agency logo">
 

@@ -23,7 +23,7 @@
 
       {% if (data['cw1pl'] == "True") %}
 
-      <p>{{ data['name'] or "Joe Bloggs" }} agrees that:</p>
+      <p>{{ data['first-name'] or "Joe" }} {{ data['last-name'] or "Bloggs" }} agrees that:</p>
 
       <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
         <li>they’ve instructed me, the provider, to act on their behalf</li>
@@ -46,7 +46,7 @@
 
       {% else %}
 
-      <p>{{ data['name'] or "Joe Bloggs" }} agrees that:</p>
+      <p>{{ data['first-name'] or "Joe" }} {{ data['last-name'] or "Bloggs" }} agrees that:</p>
 
       <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
         <li>they’ve instructed me, the provider, to act on their behalf</li>
