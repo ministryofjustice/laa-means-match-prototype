@@ -72,18 +72,34 @@
           <p class="govuk-!-margin-bottom-0"><a class="govuk-link" href="#">View result</a></p>
         </div>
 
+      
+        <h2 class="govuk-heading-m govuk-!-margin-top-5">Declaration</h2>
+
+      {{ govukTaskList({
+        idPrefix: "third-section",
+        items: [
+          {
+            title: {
+              text: "Client declaration"
+            },
+            href: "client-declaration-application-summary-ineligible",
+            status: completedStatus
+          }
+        ]
+      }) }}
+
 
       <div class="govuk-button-group govuk-!-margin-top-7">
         {{ govukButton({
           text: "Close case",
-          href: "close-case-confirm" 
+          href: "case-list" 
         }) }}
-
+        <!-- 
         {{ govukButton({ 
           text: "Save and return later",
           classes: "govuk-button--secondary", 
           href: "case-list" 
-        }) }}
+        }) }} -->
       </div>
 
 

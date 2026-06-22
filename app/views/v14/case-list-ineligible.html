@@ -1,0 +1,212 @@
+{% extends "layouts/main-v2-cases.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full width">
+
+      <h1 class="govuk-heading-l">
+        Your cases
+      </h1>
+
+      {{ govukButton({
+        text: "Record a new case",
+        href: "ecf"
+      }) }}
+
+      <nav class="moj-sub-navigation" aria-label="Sub navigation">
+        <ul class="moj-sub-navigation__list">
+          <li class="moj-sub-navigation__item">
+            <a class="moj-sub-navigation__link" href="case-list">In progress</a>
+          </li>
+          <li class="moj-sub-navigation__item">
+            <a class="moj-sub-navigation__link" href="case-list-recorded">Recorded</a>
+          </li>
+          <li class="moj-sub-navigation__item">
+            <a class="moj-sub-navigation__link" aria-current="page" href="#">Not eligible</a>
+          </li>
+        </ul>
+      </nav> 
+
+      <table class="govuk-table" data-module="moj-sortable-table">
+
+        <!-- <caption class="govuk-table__caption">Client Records</caption> -->
+
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header" aria-sort="none">Client name</th>
+            <th scope="col" class="govuk-table__header" aria-sort="none">Reference number</th>
+            <th scope="col" class="govuk-table__header" aria-sort="descending">Date recorded</th>
+          </tr>
+        </thead>
+
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="#">Oliver Grant</a></td>
+            <td class="govuk-table__cell">CW-208451</td>
+            <td class="govuk-table__cell" data-sort-value="2026.05.14">14 May 2026</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="#">Maya Richardson</a></td>
+            <td class="govuk-table__cell">CW-209873</td>
+            <td class="govuk-table__cell" data-sort-value="2026.06.03">3 Jun 2026</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="#">Ethan Cooper</a></td>
+            <td class="govuk-table__cell">CW-207662</td>
+            <td class="govuk-table__cell" data-sort-value="2026.04.28">28 Apr 2026</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="#">Zara Mahmood</a></td>
+            <td class="govuk-table__cell">CW-210194</td>
+            <td class="govuk-table__cell" data-sort-value="2026.05.21">21 May 2026</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="#">Nathan Ellis</a></td>
+            <td class="govuk-table__cell">CW-206805</td>
+            <td class="govuk-table__cell" data-sort-value="2026.04.16">16 Apr 2026</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="#">Layla Ahmed</a></td>
+            <td class="govuk-table__cell">CW-211432</td>
+            <td class="govuk-table__cell" data-sort-value="2026.06.10">10 Jun 2026</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="#">Callum Fraser</a></td>
+            <td class="govuk-table__cell">CW-208976</td>
+            <td class="govuk-table__cell" data-sort-value="2026.05.08">8 May 2026</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="#">Anya Petrova</a></td>
+            <td class="govuk-table__cell">CW-207143</td>
+            <td class="govuk-table__cell" data-sort-value="2026.04.30">30 Apr 2026</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="#">Benjamin Hart</a></td>
+            <td class="govuk-table__cell">CW-212087</td>
+            <td class="govuk-table__cell" data-sort-value="2026.06.17">17 Jun 2026</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="#">Nina Kowalski</a></td>
+            <td class="govuk-table__cell">CW-206521</td>
+            <td class="govuk-table__cell" data-sort-value="2026.04.22">22 Apr 2026</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="#">Jacob Sinclair</a></td>
+            <td class="govuk-table__cell">CW-210735</td>
+            <td class="govuk-table__cell" data-sort-value="2026.05.26">26 May 2026</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="#">Fatima Noor</a></td>
+            <td class="govuk-table__cell">CW-209314</td>
+            <td class="govuk-table__cell" data-sort-value="2026.05.11">11 May 2026</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="#">Leo Martinez</a></td>
+            <td class="govuk-table__cell">CW-211908</td>
+            <td class="govuk-table__cell" data-sort-value="2026.06.06">6 Jun 2026</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="#">Sophie Turner</a></td>
+            <td class="govuk-table__cell">CW-208229</td>
+            <td class="govuk-table__cell" data-sort-value="2026.05.02">2 May 2026</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="#">Haris Begovic</a></td>
+            <td class="govuk-table__cell">CW-207891</td>
+            <td class="govuk-table__cell" data-sort-value="2026.04.25">25 Apr 2026</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="#">Rebecca Miles</a></td>
+            <td class="govuk-table__cell">CW-212644</td>
+            <td class="govuk-table__cell" data-sort-value="2026.06.19">19 Jun 2026</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="#">Diego Navarro</a></td>
+            <td class="govuk-table__cell">CW-206972</td>
+            <td class="govuk-table__cell" data-sort-value="2026.04.18">18 Apr 2026</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="#">Aisha Rahman</a></td>
+            <td class="govuk-table__cell">CW-210483</td>
+            <td class="govuk-table__cell" data-sort-value="2026.05.29">29 May 2026</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="#">Finn O'Sullivan</a></td>
+            <td class="govuk-table__cell">CW-211157</td>
+            <td class="govuk-table__cell" data-sort-value="2026.06.12">12 Jun 2026</td>
+          </tr>
+
+
+        </tbody>
+      </table>
+
+    
+    <!-- PAGINATION --> 
+
+      <!-- <div class="moj-pagination">
+          <nav class="govuk-pagination moj-pagination__pagination " aria-label="Pagination">
+            <ul class="govuk-pagination__list">
+              <li class="govuk-pagination__item govuk-pagination__item--current">
+                <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1" aria-current="page">
+                  1
+                </a>
+              </li>
+              <li class="govuk-pagination__item">
+                <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2">
+                  2
+                </a>
+              </li>
+              <li class="govuk-pagination__item">
+                <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 3">
+                  3
+                </a>
+              </li>
+            </ul>
+            <div class="govuk-pagination__next">
+              <a class="govuk-link govuk-pagination__link" href="#" rel="next">
+                <span class="govuk-pagination__link-title">
+                  Next
+                </span>
+                <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                  <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+                </svg>
+              </a>
+            </div>
+          </nav>
+          <p class="moj-pagination__results">Showing 1 to 20 of 56 total results</p>
+        </div> -->
+    
+    
+      
+    
+    
+
+
+    </div>
+  </div>
+
+{% endblock %}

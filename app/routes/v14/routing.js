@@ -204,7 +204,12 @@ router.post(version + 'client-declaration', function (req, res) {
     res.redirect(version + 'task-list-means-complete');
   });
 
-  // Client declaration
+// Client declaration - ineligible
+router.post(version + 'client-declaration-application-summary-ineligible-answer', function (req, res) {
+    res.redirect(version + 'task-list-ineligible');
+  });
+
+  // Client declaration - eligible
 router.post(version + 'client-declaration-application-summary-answer', function (req, res) {
   req.session.data['declarationComplete'] = "True"
 
