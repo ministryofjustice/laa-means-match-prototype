@@ -465,48 +465,7 @@
         </div>
       </dl>
 
-      <!-- EVIDENCE -->
-      <h2 class="govuk-heading-l govuk-!-margin-top-8">
-        Evidence
-      </h2>
-
-      <dl class="govuk-summary-list app-summary-list--wide-keys">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Employment (PAYE) income
-          </dt>
-          <dd class="govuk-summary-list__value app-summary-list__value--right">
-            {{ data['employment-income'] or "Wage slips" }}
-          </dd>
-        </div>
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Other income
-          </dt>
-          <dd class="govuk-summary-list__value app-summary-list__value--right">
-            {{ data['housing'] or "Bank statement" }}
-          </dd>
-        </div>
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Housing costs
-          </dt>
-          <dd class="govuk-summary-list__value app-summary-list__value--right">
-            {{ data['other-income'] or "No evidence required" }}
-          </dd>
-        </div>
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Capital
-          </dt>
-          <dd class="govuk-summary-list__value app-summary-list__value--right">
-            {{ data['capital'] or "No evidence required" }}
-          </dd>
-        </div>
-      </dl>
+ 
 
 
       <!-- CLIENT DECLARATION -->
