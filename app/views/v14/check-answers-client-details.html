@@ -21,15 +21,16 @@
       </h1>
 
       <dl class="govuk-summary-list">
+
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Form of legal service
+            ECF
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['legal-service'] or "Legal help" }}
+            No
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="./family-legal-service">Change<span class="govuk-visually-hidden"> form of family legal service</span></a>
+            <a class="govuk-link" href="./ecf">Change<span class="govuk-visually-hidden"> ecf</span></a>
           </dd>
         </div>
         
@@ -47,6 +48,30 @@
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
+            Transitional EU arrangements or an international maintenance agreement?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['family-private-non-means'] or "No" }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="./family-private-non-means-question">Change<span class="govuk-visually-hidden"> type of family law</span></a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Legal aid to protect themself or their children?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['family-private-domestic-abuse'] or "No" }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="./family-private-domestic-abuse">Change<span class="govuk-visually-hidden"> type of family law</span></a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
             Evidence case is in scope
           </dt>
           <dd class="govuk-summary-list__value">
@@ -54,18 +79,6 @@
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="./family-private-evidence">Change<span class="govuk-visually-hidden"> evidence case is in scope</span></a>
-          </dd>
-        </div>
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            ECF
-          </dt>
-          <dd class="govuk-summary-list__value">
-            No
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="./ecf">Change<span class="govuk-visually-hidden"> ecf</span></a>
           </dd>
         </div>
 
@@ -168,17 +181,6 @@
           </dd>
         </div>
 
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Means assessment needed
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Yes
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="./means-required">Change<span class="govuk-visually-hidden"> address</span></a>
-          </dd>
-        </div>
 
       </dl>
 
