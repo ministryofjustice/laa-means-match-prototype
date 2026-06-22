@@ -6,7 +6,7 @@
 
 {% block content %}
 
-  <p class="govuk-body govuk-!-font-size-16">Client: <strong style="padding-right:10px">{{ data['name'] or "Joe Bloggs" }}</strong> Client's legal aid number: <strong style="padding-right:10px">{{ data['legal-aid-number'] or "LA-100054" }}</strong> Reference number: <strong style="padding-right:10px">{{ data['reference-number'] or "CW-101122" }}</strong></p>
+  <p class="govuk-body govuk-!-font-size-16">Client: <strong style="padding-right:10px">{{ data['name'] or "Jane Smith" }}</strong> Reference number: <strong style="padding-right:10px">{{ data['reference-number'] or "CW-212644" }}</strong></p>
 
   <img class="govuk-!-margin-top-8" src="/public/images/laa-logo.svg" width="30%"  alt="Legal Aid Agency logo">
 
@@ -15,115 +15,10 @@
   </h1>
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds-from-desktop">
+    <div class="govuk-grid-column-two-thirds-from-desktop">  
 
-
-    {% if (data['cw1pl'] == "True") %}
-  
-  <!-- !!!!!!!!!!!!!  CW1-PL !!!!!!!!!!!!!!! -->
-
-
-    <!-- CLIENT AND CASE DETAILS -->
-      <h2 class="govuk-heading-l govuk-!-margin-top-5">
-        Client and case details
-      </h2>
-      
-        <dl class="govuk-summary-list app-summary-list--wide-keys">
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Type of family law</dt>
-          <dd class="govuk-summary-list__value app-summary-list__value--right">Public</dd>
-        </div>
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Has local authority sent written notice?</dt>
-          <dd class="govuk-summary-list__value app-summary-list__value--right">Yes</dd>
-        </div>
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Does client have parental responsibility?</dt>
-          <dd class="govuk-summary-list__value app-summary-list__value--right">Yes</dd>
-        </div>
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Accessed legal aid before</dt>
-          <dd class="govuk-summary-list__value app-summary-list__value--right">No</dd>
-        </div>
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">First name</dt>
-          <dd class="govuk-summary-list__value app-summary-list__value--right">
-            {{ data['first-name'] or "Joe" }}
-          </dd>
-        </div>
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Last name</dt>
-          <dd class="govuk-summary-list__value app-summary-list__value--right">
-            {{ data['last-name'] or "Bloggs" }}
-          </dd>
-        </div>
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Date of birth</dt>
-          <dd class="govuk-summary-list__value app-summary-list__value--right">
-            {{ data['dob-day'] or "10" }} {{ data['dob-month'] or "Oct" }} {{ data['dob-year'] or "1982" }}
-          </dd>
-        </div>
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">National Insurance number</dt>
-          <dd class="govuk-summary-list__value app-summary-list__value--right">
-            {{ data['nino-number'] or "QQ123456C" }}
-          </dd>
-        </div>
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Address</dt>
-          <dd class="govuk-summary-list__value app-summary-list__value--right">
-            {{ data['address-line-1'] or "12 Elm Grove" }}<br>
-            {{ data['address-line-2'] or "Whitchurch" }}<br>
-            {{ data['town'] or "Bristol" }}<br>
-            {{ data['postcode'] or "BS14 9AA" }}
-          </dd>
-        </div>
-
-      </dl>
-
-      <!-- CLIENT DECLARATION -->
-      <h2 class="govuk-heading-l govuk-!-margin-top-8">
-        Client declaration
-      </h2>
-
-      <h2 class="govuk-heading-m">
-        Confirm the following
-      </h2>
-
-      <p>{{ data['name'] or "Joe Bloggs" }} agrees that:</p>
-
-      <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
-        <li>they’ve instructed me, the provider, to act on their behalf</li>
-        <li>they’ve read the LAA privacy policy</li>
-        <li>the information they’ve given is complete and correct</li>
-        </ul>
-
-      <div class="govuk-warning-text govuk-!-margin-bottom-2">
-        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-        <strong class="govuk-warning-text__text">
-          <span class="govuk-visually-hidden">Warning</span>
-          <p class="govuk-!-font-weight-bold govuk-!-margin-bottom-1">If they give wrong or incomplete information or do not report changes, they may:</p>
-          <ul class="govuk-list govuk-list--bullet govuk-!-font-weight-bold">
-            <li>be prosecuted</li>
-            <li>need to pay a financial penalty</li>
-            <li>have their legal aid stopped and have to pay back the costs</li>
-          </ul>
-        </strong>
-      </div>
 
 <!-- !!!!!!!!!!!!!  CW1 !!!!!!!!!!!!!!! -->
-
-       {% else %}
-
 
       <!-- CLIENT AND CASE DETAILS -->
       <h2 class="govuk-heading-l govuk-!-margin-top-5">
@@ -162,19 +57,19 @@
           <dd class="govuk-summary-list__value app-summary-list__value--right">No</dd>
         </div>
 
-      <div class="govuk-summary-list__row">
+        <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">First name</dt>
           <dd class="govuk-summary-list__value app-summary-list__value--right">
-            {{ data['first-name'] or "Joe" }}
+            {{ data['first-name'] or "Jane" }}
           </dd>
         </div>
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">Last name</dt>
           <dd class="govuk-summary-list__value app-summary-list__value--right">
-            {{ data['last-name'] or "Bloggs" }}
+            {{ data['last-name'] or "Smith" }}
           </dd>
-        </div>>
+        </div>
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">Date of birth</dt>
@@ -228,13 +123,13 @@
         <div class="summary-box-holder govuk-!-margin-bottom-5">
           <div class="summary-box summary-box-print">
             <p class="govuk-body summary-list-subheader govuk-!-margin-bottom-0">Gross monthly income</p>
-            <h3 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-margin-top-0">£2,450</h3>
+            <h3 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-margin-top-0">£2,000</h3>
             <p class="govuk-body govuk-!-margin-top-3">Below upper limit (£2,657).</p>
           </div>
           <div class="summary-box summary-box-print">
             <p class="govuk-body summary-list-subheader govuk-!-margin-bottom-0">Disposable monthly income</p>
-            <h3 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-margin-top-0">-£466</h3>
-            <p class="govuk-body govuk-!-margin-top-3">Below upper limit (£733).</p>
+            <h3 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-margin-top-0">£1,206</h3>
+            <p class="govuk-body govuk-!-margin-top-3">Exceeds upper limit (£733).</p>
           </div>
           <div class="summary-box summary-box-print">
             <p class="govuk-body summary-list-subheader govuk-!-margin-bottom-0">Disposable capital</p>
@@ -623,29 +518,13 @@
         Confirm the following
       </h2>
 
-      <p>{{ data['name'] or "Joe Bloggs" }} agrees that:</p>
+      <p>{{ data['name'] or "Jane Smith" }} agrees that:</p>
 
       <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
-        <li>they’ve instructed me, the provider, to act on their behalf</li>
+        <li>they’ve instructed you, the provider, to act on their behalf</li>
         <li>they’ve read the LAA privacy policy</li>
         <li>the information they’ve given is complete and correct</li>
-        <li>they’ll report any changes to their financial situation immediately
-        </ul>
-
-      <div class="govuk-warning-text govuk-!-margin-bottom-2">
-        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-        <strong class="govuk-warning-text__text">
-          <span class="govuk-visually-hidden">Warning</span>
-          <p class="govuk-!-font-weight-bold govuk-!-margin-bottom-1">If they give wrong or incomplete information, do not report changes or are found to have committed benefit fraud, they may:</p>
-          <ul class="govuk-list govuk-list--bullet govuk-!-font-weight-bold">
-            <li>be prosecuted</li>
-            <li>need to pay a financial penalty</li>
-            <li>have their legal aid stopped and have to pay back the costs</li>
-          </ul>
-        </strong>
-      </div>
-
-      {% endif %}
+      </ul>
 
       <!-- Signature -->
       <p class="govuk-body govuk-!-font-weight-bold">Client signature:</p>
