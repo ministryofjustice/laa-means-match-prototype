@@ -153,6 +153,15 @@ router.post(version + 'client-choose-address-answer', function (req, res) {
   }
 })
 
+// Client manual address question
+router.post(version + 'client-find-address-manual-answer', function (req, res) {
+  if (req.session.data['cw1pl'] == "True") {
+    res.redirect(version + 'check-answers-client-details-cw1pl')
+  } else {
+    res.redirect(version + 'check-answers-client-details')
+  }
+})
+
 // Means assessment required question
 router.post(version + 'means-required-answer', function (req, res) {
   if (req.session.data['means-required'] == "No")
