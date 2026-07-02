@@ -1,0 +1,62 @@
+{% extends "layouts/main-v2.html" %}
+
+{% block pageTitle %}
+  What form of legal service is it? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <form method="post" action="family-legal-service-answer">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <span class="govuk-caption-l">Client and case details</span>
+              <h1 class="govuk-fieldset__heading">
+                 What form of legal service is it?
+              </h1>
+            </legend>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="legal-service-1" name="legal-service" type="radio" value="Family help (lower)">
+                <label class="govuk-label govuk-radios__label" for="legal-service-1">
+                  Family help (lower)
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="legal-service-2" name="legal-service" type="radio" value="Legal help">
+                <label class="govuk-label govuk-radios__label" for="legal-service-2">
+                  Legal help
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="legal-service-3" name="legal-service" type="radio" value="Help with family mediation">
+                <label class="govuk-label govuk-radios__label" for="legal-service-3">
+                  Help with family mediation
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
