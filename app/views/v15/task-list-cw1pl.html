@@ -12,8 +12,9 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-l">{{ data['first-name'] or "Joe" }} {{ data['last-name'] or "Bloggs" }}</h1>
-      <!-- <p class="govuk-body govuk-!-margin-bottom-1">Client's legal aid number: LA-100054</p> -->
-      <p class="govuk-body">Reference number: CW-101122</p>
+      <p class="govuk-body govuk-!-margin-bottom-1">Reference number: CW-101122</p>
+      <p class="govuk-body">Office assigned to: {{ data['office'] or "A123456" }}&nbsp;&nbsp;<a href="select-office">Change</a></p>
+
 
       <h2 class="govuk-heading-m">About your client</h2>
 
