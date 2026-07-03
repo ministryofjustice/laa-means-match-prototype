@@ -194,6 +194,11 @@ router.post(version + 'no-evidence-reason', function (req, res) {
 
 // Evidence - income question
 router.post(version + 'evidence-income', function (req, res) {
+    res.redirect(version + 'evidence-expenditure');
+  });
+
+// Evidence - expenditure question
+router.post(version + 'evidence-expenditure', function (req, res) {
     res.redirect(version + 'evidence-capital');
   });
 

@@ -41,14 +41,6 @@
           <dd class="govuk-summary-list__value">
             <p><strong>Employed (PAYE) income</strong><br>
             Wage slips</p>
-
-            <!-- <p><strong>Other income</strong><br>
-              {% if data['other-income'] %}
-                {{ data['other-income'] }}
-              {% else %}
-                Student loan letter
-              {% endif %}
-            </p> -->
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="./evidence-income">Change<span class="govuk-visually-hidden"> evidence of employment income</span></a>
@@ -57,26 +49,32 @@
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Expenditure and capital
+            Expenditure
           </dt>
           <dd class="govuk-summary-list__value">
-            <!-- {% if data['capital'] %}
-                {{ data['capital'] }}
-              {% else %}
-                Evidence of expenditure and capital not required
-              {% endif %} -->
             <p><strong>Income Tax and National Insurance</strong><br>
             Wage slips</p>
             <p><strong>Housing Costs</strong><br>
             Bank statement</p>
             <p><strong>Child Care Costs</strong><br>
             Bank statement</p>
-            <p><strong>Capital</strong><br>
-            Bank statement</p>
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="./evidence-capital">Change<span class="govuk-visually-hidden"> evidence of capital</span></a>
           </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Capital
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Bank statement
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="./evidence-capital">Change<span class="govuk-visually-hidden"> evidence of capital</span></a>
+          </dd>
+        </div>
       </dl>
 
 
