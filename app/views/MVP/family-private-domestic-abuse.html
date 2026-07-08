@@ -1,0 +1,66 @@
+{% extends "layouts/main-v2.html" %}
+
+{% block pageTitle %}
+  What type of family law is it? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <form method="post" action="family-private-domestic-abuse-answer">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <span class="govuk-caption-l">Client and case details</span>
+              <h1 class="govuk-fieldset__heading">
+                 Does your client need legal aid to protect themself or their children?
+              </h1>
+            </legend>
+
+            <p class="govuk-body">This includes:</p>
+
+            <ul class="govuk-list govuk-list--bullet">
+              <li>non-molestation orders</li>
+              <li>occupation orders</li>
+              <li>prohibited steps orders</li>
+              <li>other legal protections</li>
+            </ul>
+
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="family-private-domestic-abuse-1" name="family-private-domestic-abuse" type="radio" value="Yes">
+                <label class="govuk-label govuk-radios__label" for="family-private-domestic-abuse-1">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="family-private-domestic-abuse-2" name="family-private-domestic-abuse" type="radio" value="No">
+                <label class="govuk-label govuk-radios__label" for="family-private-domestic-abuse-2">
+                  No
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

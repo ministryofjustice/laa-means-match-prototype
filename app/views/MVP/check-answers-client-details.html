@@ -1,0 +1,188 @@
+{% extends "layouts/main-v2.html" %}
+
+{% block pageTitle %}
+  Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <span class="govuk-caption-l">Client and case details</span>
+      <h1 class="govuk-heading-l">
+        Check your answers
+      </h1>
+
+      <dl class="govuk-summary-list">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            ECF
+          </dt>
+          <dd class="govuk-summary-list__value">
+            No
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="./ecf">Change<span class="govuk-visually-hidden"> ecf</span></a>
+          </dd>
+        </div>
+        
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Type of family law
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['family-law-type'] or "Private" }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="./family-type-of-case">Change<span class="govuk-visually-hidden"> type of family law</span></a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Transitional EU arrangements or an international maintenance agreement?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['family-private-non-means'] or "No" }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="./family-private-non-means-question">Change<span class="govuk-visually-hidden"> type of family law</span></a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Legal aid to protect themself or their children?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['family-private-domestic-abuse'] or "No" }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="./family-private-domestic-abuse">Change<span class="govuk-visually-hidden"> type of family law</span></a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Evidence case is in scope
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['scoping-evidence'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="./family-private-evidence">Change<span class="govuk-visually-hidden"> evidence case is in scope</span></a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Accessed legal aid before
+          </dt>
+          <dd class="govuk-summary-list__value">
+            No
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="./legal-aid-before">Change<span class="govuk-visually-hidden"> legal aid before</span></a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            First name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['first-name'] or "Joe" }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="./client-details">Change<span class="govuk-visually-hidden"> first name</span></a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Last name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['last-name'] or "Bloggs" }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="./client-details">Change<span class="govuk-visually-hidden"> last name</span></a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date of birth
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['dob-day'] or "10" }} {{ data['dob-month'] or "Oct" }} {{ data['dob-year'] or "1982" }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="./client-details">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+          </dd>
+        </div>
+        
+        <!-- Still need to make work for no nino -->
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            National Insurance number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['nino-number'] or "QQ123456C" }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="./nino">Change<span class="govuk-visually-hidden"> National Insurance number</span></a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Has address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['has-address'] or "Yes" }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="./nino">Change<span class="govuk-visually-hidden"> whether client has address</span></a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['address-line-1'] or "12 Elm Grove" }}<br>
+            {{ data['address-line-2']}}
+            {{ data['town'] or "Whitchurch" }}<br>
+            {{ data['county'] or "Bristol" }}<br>
+            {{ data['postcode'] or "BS14 9AA" }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="./client-find-address">Change<span class="govuk-visually-hidden"> address</span></a>
+          </dd>
+        </div>
+
+
+      </dl>
+
+
+      <form action="./task-list-new" method="post" novalidate>
+
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

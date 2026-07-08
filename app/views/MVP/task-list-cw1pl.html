@@ -1,0 +1,107 @@
+{% extends "layouts/main-v2.html" %}
+
+{% block pageTitle %}
+  Task list template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">{{ data['first-name'] or "Joe" }} {{ data['last-name'] or "Bloggs" }}</h1>
+      <p class="govuk-body govuk-!-margin-bottom-1">Reference number: CW-101122</p>
+      <p class="govuk-body">Office assigned to: {{ data['office'] or "A123456" }}</p>
+
+
+      <h2 class="govuk-heading-m">About your client</h2>
+
+      {% set completedStatus = {
+        text: "Completed"
+      } %}
+
+      {% set incompleteStatus = {
+        tag: {
+          text: "Incomplete",
+          classes: "govuk-tag--blue"
+        }
+      } %}
+
+      {# To switch between the completed and incomplete statues, use some inline logic within the component below, like this: "status: (completedStatus if ... else incompleteStatus)" #}
+
+      {{ govukTaskList({
+        idPrefix: "first-section",
+        items: [
+          {
+            title: {
+              text: "Client and case details"
+            },
+            href: "./check-answers-client-details",
+            status: completedStatus
+          }
+        ]
+      }) }}
+
+      <h2 class="govuk-heading-m govuk-!-margin-top-5">Declarations</h2>
+
+      {% if (data['declarationComplete'] == "True") %}
+
+        {{ govukTaskList({
+          idPrefix: "third-section",
+          items: [
+            {
+              title: {
+                text: "Client declaration"
+              },
+              href: "client-declaration",
+              status: completedStatus
+            }
+          ]
+        }) }}
+
+        <div class="govuk-button-group govuk-!-margin-top-8">
+        {{ govukButton({
+          text: "Record controlled work",
+          href: "confirmation" 
+        }) }}
+
+        {{ govukButton({ 
+          text: "Save and return later",
+          classes: "govuk-button--secondary", 
+          href: "case-list" 
+        }) }}
+      </div>
+      
+      {% else %}
+
+        {{ govukTaskList({
+          idPrefix: "third-section",
+          items: [
+            {
+              title: {
+                text: "Client declaration"
+              },
+              href: "client-declaration",
+              status: incompleteStatus
+            }
+          ]
+        }) }}
+
+        <div class="govuk-!-margin-top-5">
+          {{ govukButton({ 
+            text: "Save and return later",
+            classes: "govuk-button--secondary", 
+            href: "case-list" 
+          }) }}
+        </div>
+
+      {% endif %}
+
+      <!-- <a  href="task-list-means-complete">X</a> -->
+
+
+    </div>
+  </div>
+{% endblock %}
