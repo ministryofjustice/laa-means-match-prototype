@@ -14,7 +14,7 @@
         Your cases
       </h1>
 
-      <p class="govuk-body">Office: {{ data['office'] or "A123456" }}&nbsp;&nbsp;<a href="select-office">Change</a></p>
+      <p class="govuk-body govuk-!-margin-bottom-5">Office: London ({{ data['office'] or "A123456" }})&nbsp;&nbsp;&nbsp;<a href="select-office">Change</a></p>
 
       {{ govukButton({
         text: "Record a new case",
