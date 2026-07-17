@@ -192,15 +192,33 @@ router.post(version + 'no-evidence-reason', function (req, res) {
     }
 })
 
-// Evidence - income question
+/// Evidence - income question
 router.post(version + 'evidence-income', function (req, res) {
-    res.redirect(version + 'evidence-expenditure');
+    res.redirect(version + 'do-they-have-evidence-capital');
   });
+
+// Do they have evidence of capital and expenditure question
+router.post(version + 'evidence-capital-answer', function (req, res) {
+  if (req.session.data['expenditure'] == "Yes")
+    {
+      res.redirect(version + 'evidence-expenditure')
+    } else if (req.session.data['capital'] == "Yes") {
+      res.redirect(version + 'evidence-capital')
+    } else {
+      res.redirect(version + 'check-answers-evidence')
+    }
+})
 
 // Evidence - expenditure question
 router.post(version + 'evidence-expenditure', function (req, res) {
-    res.redirect(version + 'evidence-capital');
+    if (req.session.data['capital'] = "Yes")
+    {
+      res.redirect(version + 'evidence-capital')
+    } else {
+      res.redirect(version + 'check-answers-evidence')
+    }
   });
+
 
 // Evidence - capital question
 router.post(version + 'evidence-capital', function (req, res) {

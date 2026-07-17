@@ -1,0 +1,92 @@
+{% extends "layouts/main-v2.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <form method="post" action="evidence-capital-answer">
+
+
+        <span class="govuk-caption-l">Evidence</span>
+        <h1 class="govuk-heading-l">
+            Expenditure and capital
+        </h1>
+
+        <p class="govuk-body">You only need to gather evidence of your client's expenditure and capital if they are close to the threshold and there is a risk of them being ineligible. <a href="#">Check the risk-based evidence guidelines (opens in a new window or tab)</a>.</p>
+        
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h1 class="govuk-fieldset__heading">
+                 Do you have evidence of your client's expenditure?
+              </h1>
+            </legend>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="expenditure-yes" name="expenditure" type="radio" value="Yes">
+                <label class="govuk-label govuk-radios__label" for="expenditure-yes">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="expenditure-no" name="expenditure" type="radio" value="No">
+                <label class="govuk-label govuk-radios__label" for="expenditure-no">
+                  No, evidence not required
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h1 class="govuk-fieldset__heading">
+                 Do you have evidence of your client's capital?
+              </h1>
+            </legend>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="capital-yes" name="capital" type="radio" value="Yes">
+                <label class="govuk-label govuk-radios__label" for="capital-yes">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="capital-no" name="capital" type="radio" value="No">
+                <label class="govuk-label govuk-radios__label" for="capital-no">
+                  No, evidence not required
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="govuk-button-group ">
+          <button type="submit" class="govuk-button govuk-!-margin-top-2" data-module="govuk-button">
+            Continue
+          </button>
+          <a href="case-list" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Save and return later
+          </a>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
