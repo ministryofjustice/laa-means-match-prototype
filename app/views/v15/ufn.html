@@ -1,0 +1,44 @@
+{% extends "layouts/main-v2.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    <form method="post">
+
+      <div class="govuk-form-group">
+        <h1 class="govuk-label-wrapper">
+          <span class="govuk-caption-l">Client declaration</span>
+          <label class="govuk-label govuk-label--l" for="ufn">
+            What is the unique file number (UFN) for this case?
+          </label>
+        </h1>
+
+        <div id="ufn-hint" class="govuk-hint">
+          For example, 160726/001
+        </div>
+        <input class="govuk-input govuk-input--width-10" id="ufn" name="ufn" type="text">
+      </div>
+
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+
+    </form>
+
+    </div>
+  </div>
+
+{% endblock %}

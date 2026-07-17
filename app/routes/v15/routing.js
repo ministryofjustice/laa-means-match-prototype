@@ -241,8 +241,18 @@ router.post(version + 'client-declaration-application-summary-ineligible-answer'
     res.redirect(version + 'task-list-ineligible');
   });
 
-  // Client declaration - eligible
-router.post(version + 'client-declaration-application-summary-answer', function (req, res) {
+// Client declaration - eligible
+router.post(version + 'client-declaration-application-summary', function (req, res) {
+    res.redirect(version + 'ufn');
+  });
+
+// UFN question
+router.post(version + 'ufn', function (req, res) {
+    res.redirect(version + 'check-answers-declaration');
+  });
+
+// Client declaration - check answers
+router.post(version + 'check-answers-declaration-answer', function (req, res) {
   req.session.data['declarationComplete'] = "True"
 
     if (req.session.data['cw1pl'] == "True")

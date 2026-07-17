@@ -23,29 +23,66 @@
 
       <p>Download a copy of the details you entered for your client and get them to sign the declaration.</p>
 
-
       <p>You must save a copy along with any evidence provided by your client. Your client’s file may be audited and assessed by the LAA at a later date.</p>
 
       <a href="client-declaration-print" target="_blank" class="govuk-button govuk-button--secondary">Download declaration as a PDF</a>
 
-      <h2 class="govuk-heading-m">
-        Confirmation of signed declaration
-      </h2>
+      <div class="govuk-form-group">
 
-      <p>The date your client signs the declaration is your case start date and the date you can bill from.</p>
+        <h2 class="govuk-heading-m">
+          Confirmation of signed declaration
+        </h2>
+        <!-- <p>The date your client signs the declaration is your case start date and the date you can bill from.</p> -->
 
-      <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-        <div class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="declaration" name="declaration" type="checkbox" value="Yes">
-          <label class="govuk-label govuk-checkboxes__label" for="declaration">
-            I confirm that I have a signed declaration from my client
-          </label>
+        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="declaration" name="declaration" type="checkbox" value="Yes">
+            <label class="govuk-label govuk-checkboxes__label" for="declaration">
+              I confirm that I have a signed declaration from my client
+            </label>
+          </div>
         </div>
       </div>
 
-      <form class="form" action="./client-declaration-application-summary-answer" method="post">
+       <!-- Case start date -->
+        <div class="govuk-form-group">
+            <label class="govuk-label">
+              Date of signature
+            </label>
+            <div id="start-date-hint" class="govuk-hint">
+              This is your case start date and the date you can bill from 
+            </div>
+            <div class="govuk-date-input" id="start-date">
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="start-date-day">
+                    Day
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="start-date-day" name="start-date-day" type="text" inputmode="numeric">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="start-date-month">
+                    Month
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="start-date-month" name="start-date-month" type="text" inputmode="numeric">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="start-date-year">
+                    Year
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="start-date-year" name="start-date-year" type="text" inputmode="numeric">
+                </div>
+              </div>
+            </div>
+        </div>
+
+      <form class="form" action="./client-declaration-application-summary" method="post">
         <div class="govuk-button-group ">
-          <button type="submit" class="govuk-button govuk-!-margin-top-6" data-module="govuk-button">
+          <button type="submit" class="govuk-button govuk-!-margin-top-3" data-module="govuk-button">
             Continue
           </button>
           <a href="case-list" class="govuk-button govuk-button--secondary" data-module="govuk-button">
