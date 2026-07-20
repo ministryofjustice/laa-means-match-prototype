@@ -137,7 +137,7 @@ router.post(version + 'does-client-have-address-answer', function (req, res) {
     }
     else if (req.session.data['have-address'] == "No, they have no fixed address")
     {
-      res.redirect(version + 'means-required')
+      res.redirect(version + 'check-answers-client-details')
     } 
     else {
       res.redirect(version + 'client-find-address-manual')
@@ -149,7 +149,7 @@ router.post(version + 'client-choose-address-answer', function (req, res) {
   if (req.session.data['cw1pl'] == "True") {
     res.redirect(version + 'check-answers-client-details-cw1pl')
   } else {
-    res.redirect(version + 'means-required')
+    res.redirect(version + 'check-answers-client-details')
   }
 })
 
@@ -162,15 +162,15 @@ router.post(version + 'client-find-address-manual-answer', function (req, res) {
   }
 })
 
-// Means assessment required question
-router.post(version + 'means-required-answer', function (req, res) {
-  if (req.session.data['means-required'] == "No")
-    {
-      res.redirect(version + 'non-means')
-    } else {
-      res.redirect(version + 'check-answers-client-details')
-    }
-})
+// // Means assessment required question
+// router.post(version + 'means-required-answer', function (req, res) {
+//   if (req.session.data['means-required'] == "No")
+//     {
+//       res.redirect(version + 'non-means')
+//     } else {
+//       res.redirect(version + 'check-answers-client-details')
+//     }
+// })
 
 // Do they have evidence question
 router.post(version + 'evidence-answer', function (req, res) {
