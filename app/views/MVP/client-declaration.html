@@ -21,49 +21,53 @@
         Confirm the following
       </h1>
 
+      <!-- NON MEANS -->
       {% if (data['cw1pl'] == "True") %}
 
       <p>{{ data['first-name'] or "Joe" }} {{ data['last-name'] or "Bloggs" }} agrees that:</p>
 
       <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
-        <li>they’ve instructed me, the provider, to act on their behalf</li>
-        <li>they’ve read the <a class="govuk-link" href="#">LAA privacy policy (opens in a new window or tab)</a></li>
-        <li>the information they’ve given is complete and correct</li>
+        <!-- <li>they’ve instructed me, the provider, to act on their behalf</li> -->
+        <li>they’ve read the <a class="govuk-link" href="#">Legal Aid Agency privacy notice (opens in a new window or tab)</a> and understand how their information will be used</li>
+        <li>the information they've given is true to the best of their knowledge and they've not withheld any information</li>
         </ul>
 
       <div class="govuk-warning-text govuk-!-margin-bottom-2">
         <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
         <strong class="govuk-warning-text__text">
           <span class="govuk-visually-hidden">Warning</span>
-          <p class="govuk-!-font-weight-bold govuk-!-margin-bottom-1">If they give wrong or incomplete information or do not report changes, they may:</p>
+          <p class="govuk-!-font-weight-bold govuk-!-margin-bottom-1">If they tell you anything false or misleading or leave anything out: </p>
           <ul class="govuk-list govuk-list--bullet govuk-!-font-weight-bold">
-            <li>be prosecuted</li>
-            <li>need to pay a financial penalty</li>
-            <li>have their legal aid stopped and have to pay back the costs</li>
+            <li>they may be prosecuted</li>
+            <li>their legal aid may be taken away and they may have to pay back all their legal fees
           </ul>
         </strong>
       </div>
 
       {% else %}
 
+      <!-- MEANS -->
+
       <p>{{ data['first-name'] or "Joe" }} {{ data['last-name'] or "Bloggs" }} agrees that:</p>
 
       <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
-        <li>they’ve instructed me, the provider, to act on their behalf</li>
-        <li>they’ve read the <a class="govuk-link" href="#">LAA privacy policy (opens in a new window or tab)</a></li>
-        <li>the information they’ve given is complete and correct</li>
-        <li>they’ll report any changes to their financial situation immediately
-        </ul>
+        <li>they’ve read the <a class="govuk-link" href="#">Legal Aid Agency privacy notice (opens in a new window or tab)</a> and understand how their information will be used</li>
+        <li>the information they've given is true to the best of their knowledge and they've not withheld any information</li>
+        <li>this is a true statement of all their and their partner’s income and assets in the UK and abroad</li> 
+        <li>they'll report any changes to their or their partner’s financial situation immediately</li>
+        <li>they must co-operate fully and immediately with any enquiry into their financial circumstances and they’ll provide more evidence if their solicitor or the LAA ask</li>
+        <li>we can check their details with bank and credit reference agencies and other third parties</li>
+        <li>we can share their information with local government bodies and authorities and other government departments such as HMRC and DWP</li>
+      </ul>
 
       <div class="govuk-warning-text govuk-!-margin-bottom-2">
         <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
         <strong class="govuk-warning-text__text">
           <span class="govuk-visually-hidden">Warning</span>
-          <p class="govuk-!-font-weight-bold govuk-!-margin-bottom-1">If they give wrong or incomplete information, do not report changes or are found to have committed benefit fraud, they may:</p>
+          <p class="govuk-!-font-weight-bold govuk-!-margin-bottom-1">If they tell you anything false or misleading or leave anything out: </p>
           <ul class="govuk-list govuk-list--bullet govuk-!-font-weight-bold">
-            <li>be prosecuted</li>
-            <li>need to pay a financial penalty</li>
-            <li>have their legal aid stopped and have to pay back the costs</li>
+            <li>they may be prosecuted</li>
+            <li>their legal aid may be taken away and they may have to pay back all their legal fees
           </ul>
         </strong>
       </div>
@@ -84,8 +88,7 @@
         <a href="case-list" class="govuk-button govuk-button--secondary" data-module="govuk-button">
           Save and return later
         </a>
-      </div>
-      
+      </div>      
 
     </div>
   </div>

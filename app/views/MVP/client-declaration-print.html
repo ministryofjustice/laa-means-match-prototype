@@ -112,27 +112,25 @@
         Client declaration
       </h2>
 
-      <h2 class="govuk-heading-m">
+      <!-- <h2 class="govuk-heading-m">
         Confirm the following
-      </h2>
+      </h2> -->
 
-      <p>{{ data['first-name'] or "Joe" }} {{ data['last-name'] or "Bloggs" }} agrees that:</p>
+      <p>By signing this declaration, I agree that:</p>
 
       <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
-        <li>they’ve instructed me, the provider, to act on their behalf</li>
-        <li>they’ve read the LAA privacy policy</li>
-        <li>the information they’ve given is complete and correct</li>
+        <li>I've read the <a class="govuk-link" href="#">Legal Aid Agency privacy notice (opens in a new window or tab)</a> and understand how my information will be used</li>
+        <li>the information I've given is true to the best of my knowledge and I've not withheld any information</li>
         </ul>
 
       <div class="govuk-warning-text govuk-!-margin-bottom-2">
         <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
         <strong class="govuk-warning-text__text">
           <span class="govuk-visually-hidden">Warning</span>
-          <p class="govuk-!-font-weight-bold govuk-!-margin-bottom-1">If they give wrong or incomplete information or do not report changes, they may:</p>
+          <p class="govuk-!-font-weight-bold govuk-!-margin-bottom-1">If you tell us anything false or misleading or leave anything out: </p>
           <ul class="govuk-list govuk-list--bullet govuk-!-font-weight-bold">
-            <li>be prosecuted</li>
-            <li>need to pay a financial penalty</li>
-            <li>have their legal aid stopped and have to pay back the costs</li>
+            <li>you may be prosecuted</li>
+            <li>your legal aid may be taken away and you may have to pay back all of your fees
           </ul>
         </strong>
       </div>
@@ -255,12 +253,12 @@
           </div>
           <div class="summary-box summary-box-print">
             <p class="govuk-body summary-list-subheader govuk-!-margin-bottom-0">Disposable monthly income</p>
-            <h3 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-margin-top-0">-£466</h3>
+            <h3 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-margin-top-0">£108</h3>
             <p class="govuk-body govuk-!-margin-top-3">Below upper limit (£733).</p>
           </div>
           <div class="summary-box summary-box-print">
             <p class="govuk-body summary-list-subheader govuk-!-margin-bottom-0">Disposable capital</p>
-            <h3 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-margin-top-0">£500</h3>
+            <h3 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-margin-top-0">£700</h3>
             <p class="govuk-body govuk-!-margin-top-3">Below upper limit (£3,000).</p>
           </div>
         </div>
@@ -476,7 +474,7 @@
           </dt>
           <dd class="govuk-summary-list__value app-summary-list__value--right">
             Yes<br>
-            £520.00 Monthly
+            £650.00 Monthly
           </dd>
         </div>
 
@@ -641,28 +639,49 @@
         Client declaration
       </h2>
 
-      <h2 class="govuk-heading-m">
+      <!-- <h2 class="govuk-heading-m">
         Confirm the following
-      </h2>
+      </h2> -->
 
-      <p>{{ data['first-name'] or "Joe" }} {{ data['last-name'] or "Bloggs" }} agrees that:</p>
+      <p>By signing this declaration, I agree that:</p>
 
       <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
-        <li>they’ve instructed me, the provider, to act on their behalf</li>
-        <li>they’ve read the LAA privacy policy</li>
-        <li>the information they’ve given is complete and correct</li>
-        <li>they’ll report any changes to their financial situation immediately
-        </ul>
+        <li>I’ve read the <a class="govuk-link" href="#">Legal Aid Agency privacy notice (opens in a new window or tab)</a> and understand how my information will be used</li>
+        <li>the information I've given is true to the best of my knowledge and I've not withheld any information</li>
+        <li>this is a true statement of all my and my partner’s income and assets in the UK and abroad</li> 
+        <li>I'll report any changes to my or my partner’s financial situation immediately</li>
+        <li>I must co-operate fully and immediately with any enquiry into my financial circumstances and I’ll provide more evidence if my solicitor or the LAA ask</li>
+        <li>we can check your details with bank and credit reference agencies and other third parties</li>
+      </ul>
+
+      <p>I understand that:</p>
+
+      <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+        <li>the LAA may check my income and capital status and that I continue to receive benefits with HMRC. HMRC may carry out necessary checks to verify my financial status and may give that information to the LAA.</li> 
+        <li>the LAA may confirm that I continue to receive benefits from the Department for Work and Pensions (DWP). The DWP may process my information to check that it is still correct and may tell the LAA about any changes.</li>
+      </ul>
+
+      
+      {% if (data['family-law-type'] == "Private") %}
+
+      <h3 class="govuk-heading-s">The statutory charge (only applies to certain “family help lower” cases)</h3>
+      <p class="govuk-body">I may have to repay part of the legal costs if I keep or gain money or property at the end of this case (the statutory charge).</p>
+      <p class="govuk-body govuk-!-margin-bottom-6">I agree to my solicitor or legal aid adviser having a first charge on any money or property, including costs, which I keep or gain in relation to this matter. The more work my solicitor does the more I may have to pay.</p>
+
+      {% else %}
+      {% endif %}
+
+      <p>I understand if false or inaccurate information is provided and fraud is identified details may be passed to fraud prevention agencies to prevent fraud and money laundering.</p>
+
 
       <div class="govuk-warning-text govuk-!-margin-bottom-2">
         <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
         <strong class="govuk-warning-text__text">
           <span class="govuk-visually-hidden">Warning</span>
-          <p class="govuk-!-font-weight-bold govuk-!-margin-bottom-1">If they give wrong or incomplete information, do not report changes or are found to have committed benefit fraud, they may:</p>
+          <p class="govuk-!-font-weight-bold govuk-!-margin-bottom-1">If you tell us anything false or misleading or leave anything out: </p>
           <ul class="govuk-list govuk-list--bullet govuk-!-font-weight-bold">
-            <li>be prosecuted</li>
-            <li>need to pay a financial penalty</li>
-            <li>have their legal aid stopped and have to pay back the costs</li>
+            <li>you may be prosecuted</li>
+            <li>your legal aid may be taken away and you may have to pay back all of your fees
           </ul>
         </strong>
       </div>
