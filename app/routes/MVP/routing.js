@@ -98,7 +98,7 @@ router.post(version + 'family-public-parental-answer', function (req, res) {
   if (req.session.data['parental'] == "No"){
 		res.redirect(version + 'confirm-merits-criteria')
 	} else {
-    res.redirect(version + 'legal-aid-before')
+    res.redirect(version + 'confirm-merits-criteria')
     req.session.data['cw1pl'] = "True"
 	}
 })
