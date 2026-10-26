@@ -1,5 +1,5 @@
-# Prototype kit only supports up to v20
-FROM node:20-alpine3.21
+# Prototype Kit 14 requires Node.js 22 or later
+FROM node:24.22.1-alpine3.23
 
 WORKDIR /app
 COPY package.json ./
